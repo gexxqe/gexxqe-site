@@ -21,3 +21,30 @@ if('IntersectionObserver' in window){
   },{threshold:.12,rootMargin:'0px 0px -40px'});
   revealEls.forEach(el=>io.observe(el));
 }else revealEls.forEach(el=>el.classList.add('is-visible'));
+
+const contactForm=document.getElementById('contactForm');
+contactForm?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const data=new FormData(contactForm);
+  const name=(data.get('name')||'').toString().trim();
+  const email=(data.get('email')||'').toString().trim();
+  const project=(data.get('project')||'').toString();
+  const budget=(data.get('budget')||'').toString();
+  const message=(data.get('message')||'').toString().trim();
+  const subject=`Demande de projet — ${project} — ${name}`;
+  const body=[
+    'Bonjour gexxqe,',
+    '',
+    `Nom / entreprise : ${name}`,
+    `E-mail : ${email}`,
+    `Type de projet : ${project}`,
+    `Budget estimatif : ${budget}`,
+    '',
+    'Message :',
+    message,
+    '',
+    'Cordialement,',
+    name
+  ].join('\n');
+  window.location.href=`mailto:contact@gexxqe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
