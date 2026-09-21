@@ -23,3 +23,6 @@ footer{padding:34px 0 45px;border-top:1px solid var(--line)}.footer-grid{display
 
 .optional{font-weight:500;color:#9fb0a6}.form-trust{font-size:11px!important;color:#c7d3cb!important;margin:0!important;font-weight:700}.contact-direct a+a{margin-top:2px}
 @media(max-width:560px){.contact-form textarea{min-height:105px}}
+
+.service-card{padding:0;min-height:0;overflow:hidden}.service-card summary{list-style:none;cursor:pointer;padding:28px;min-height:320px;position:relative}.service-card summary::-webkit-details-marker{display:none}.service-card summary:after{content:"+";position:absolute;right:26px;top:24px;width:32px;height:32px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--deep);font-size:20px;font-weight:400}.service-card[open] summary:after{content:"–"}.service-card[open] summary{min-height:0}.service-card summary p{margin-bottom:0}.service-more{display:inline-block;margin-top:22px;font-size:11px;font-weight:800;color:#718078}.service-details{padding:0 28px 28px;border-top:1px solid var(--line);background:#fbf8f1}.service-details ul{margin-top:22px}.service-card[open]{box-shadow:0 16px 44px rgba(21,53,40,.08)}
+@media(max-width:560px){.service-card summary{min-height:0;padding:24px}.service-card summary:after{right:20px;top:20px}.service-details{padding:0 24px 24px}}
