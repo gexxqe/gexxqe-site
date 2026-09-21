@@ -32,15 +32,17 @@ contactForm?.addEventListener('submit',e=>{
   const project=(data.get('project')||'').toString();
   const budget=(data.get('budget')||'').toString();
   const message=(data.get('message')||'').toString().trim();
-  const subject=`Demande de projet — ${project} — ${name}`;
+  const projectLabel=project || 'Projet à définir';
+  const budgetLabel=budget || 'À définir';
+  const subject=`Demande de projet — ${projectLabel} — ${name}`;
   const body=[
     'Bonjour gexxqe,',
     '',
     `Nom / entreprise : ${name}`,
     `E-mail : ${email}`,
     `Téléphone : ${phone || 'Non renseigné'}`,
-    `Type de projet : ${project}`,
-    `Budget estimatif : ${budget}`,
+    `Type de projet : ${projectLabel}`,
+    `Budget estimatif : ${budgetLabel}`,
     '',
     'Message :',
     message,
