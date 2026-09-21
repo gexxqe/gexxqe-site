@@ -28,6 +28,7 @@ contactForm?.addEventListener('submit',e=>{
   const data=new FormData(contactForm);
   const name=(data.get('name')||'').toString().trim();
   const email=(data.get('email')||'').toString().trim();
+  const phone=(data.get('phone')||'').toString().trim();
   const project=(data.get('project')||'').toString();
   const budget=(data.get('budget')||'').toString();
   const message=(data.get('message')||'').toString().trim();
@@ -37,6 +38,7 @@ contactForm?.addEventListener('submit',e=>{
     '',
     `Nom / entreprise : ${name}`,
     `E-mail : ${email}`,
+    `Téléphone : ${phone || 'Non renseigné'}`,
     `Type de projet : ${project}`,
     `Budget estimatif : ${budget}`,
     '',
