@@ -26,6 +26,7 @@
         <a href="#services">Services</a>
         <a href="#realisations">Réalisations</a>
         <a href="#offres">Offres</a>
+        <a href="#processus">Processus</a>
         <a href="#apropos">À propos</a>
         <a class="nav-cta" href="#contact">Me contacter</a>
       </nav>
@@ -169,6 +170,39 @@
       </div>
     </section>
 
+    <section class="section process-section" id="processus">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="eyebrow">Comment ça marche ?</div>
+          <h2>Un projet simple à suivre, du premier échange à la mise en ligne.</h2>
+          <p>Vous gardez une vision claire de chaque étape, sans jargon inutile ni mauvaise surprise.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><span>01</span><h3>Échange</h3><p>Vous nous expliquez votre activité, vos objectifs et ce dont vous avez réellement besoin.</p></article>
+          <article class="process-step reveal"><span>02</span><h3>Proposition</h3><p>Vous recevez une proposition claire avec le périmètre, le tarif et les prochaines étapes.</p></article>
+          <article class="process-step reveal"><span>03</span><h3>Création</h3><p>Nous construisons la solution, puis nous ajustons ensemble les détails avant validation.</p></article>
+          <article class="process-step reveal"><span>04</span><h3>Mise en ligne</h3><p>Le projet est publié, testé sur mobile et ordinateur, puis prêt à évoluer avec votre activité.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="eyebrow">FAQ</div>
+          <h2>Les questions qu’on nous pose le plus souvent.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details><summary>Combien de temps faut-il pour créer un site ?</summary><p>Pour un site vitrine standard, comptez généralement entre 1 et 3 semaines selon le contenu, les retours et les fonctionnalités demandées.</p></details>
+          <details><summary>Dois-je fournir les textes et les photos ?</summary><p>Vous pouvez fournir vos contenus existants. Nous pouvons aussi vous aider à structurer les textes, les sections et les visuels nécessaires.</p></details>
+          <details><summary>Le site fonctionne-t-il sur téléphone ?</summary><p>Oui. Chaque projet est conçu pour fonctionner sur mobile, tablette et ordinateur.</p></details>
+          <details><summary>Pouvez-vous gérer le nom de domaine et la mise en ligne ?</summary><p>Oui. Nous pouvons vous accompagner pour le domaine, la configuration technique et la mise en ligne du site.</p></details>
+          <details><summary>Pourrai-je modifier mon site après la livraison ?</summary><p>Oui, selon la formule choisie. Certaines solutions intègrent un espace d’administration pour gérer facilement le contenu.</p></details>
+          <details><summary>Proposez-vous une maintenance après la livraison ?</summary><p>Oui. La maintenance, les évolutions et le support peuvent être ajoutés selon vos besoins.</p></details>
+        </div>
+      </div>
+    </section>
+
     <section class="section about-section" id="apropos">
       <div class="shell about-grid">
         <div class="about-mark reveal" aria-hidden="true">
@@ -186,16 +220,44 @@
 
     <section class="section contact-section" id="contact">
       <div class="shell contact-card reveal">
-        <div>
+        <div class="contact-copy">
           <div class="eyebrow gold">Votre projet</div>
           <h2>Parlons de ce que vous voulez construire.</h2>
-          <p>Expliquez votre besoin en quelques lignes. Nous vous répondons directement à l’adresse professionnelle gexxqe.</p>
+          <p>Décrivez votre besoin en quelques lignes. Le formulaire prépare directement votre demande à destination de <strong>contact@gexxqe.com</strong>.</p>
+          <div class="contact-direct">
+            <a href="mailto:contact@gexxqe.com">contact@gexxqe.com</a>
+            <span>Réponse personnalisée · Sans engagement</span>
+          </div>
         </div>
-        <div class="contact-actions">
-          <a class="btn gold-btn" href="mailto:contact@gexxqe.com">contact@gexxqe.com</a>
-          <a class="btn dark-outline" href="https://github.com/gexxqe" target="_blank" rel="noopener">Voir GitHub ↗</a>
-          <a class="btn dark-outline" href="#accueil">Retour en haut ↑</a>
-        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label>Nom / entreprise<input type="text" name="name" autocomplete="name" required></label>
+            <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Type de projet
+              <select name="project">
+                <option>Site vitrine</option>
+                <option>Restaurant / commerce</option>
+                <option>E-commerce</option>
+                <option>Application / outil digital</option>
+                <option>Autre</option>
+              </select>
+            </label>
+            <label>Budget estimatif
+              <select name="budget">
+                <option>À définir</option>
+                <option>Moins de 700 €</option>
+                <option>700–1 000 €</option>
+                <option>1 000–1 500 €</option>
+                <option>Plus de 1 500 €</option>
+              </select>
+            </label>
+          </div>
+          <label>Votre message<textarea name="message" rows="5" required placeholder="Parlez-nous de votre activité, de votre idée et de votre objectif."></textarea></label>
+          <button class="btn gold-btn form-submit" type="submit">Envoyer ma demande</button>
+          <p class="form-note">Le bouton ouvre votre application e-mail avec la demande déjà préparée.</p>
+        </form>
       </div>
     </section>
   </main>
