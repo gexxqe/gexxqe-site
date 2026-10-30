@@ -45,3 +45,19 @@ footer{padding:34px 0 45px;border-top:1px solid var(--line)}.footer-grid{display
 .thanks-brand{justify-content:center;margin-bottom:36px}
 .thanks-card .thanks-brand .wordmark{margin-bottom:0}
 @media(max-width:560px){.brand{gap:10px}.brand-icon{width:42px;height:42px;border-radius:10px}.brand-copy .wordmark{font-size:28px}.visual-brand-icon{width:64px;height:64px;margin-right:12px}}
+
+/* Public social profiles, available in contact and footer. */
+.social-links{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.social-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 14px;border:1px solid #cfc7b8;border-radius:999px;color:var(--deep);font-size:12px;font-weight:700;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.social-link svg{display:block;flex-shrink:0}
+.social-link:hover{background:var(--deep);border-color:var(--deep);color:var(--cream)}
+.social-link:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.social-label{font-size:11px;font-weight:700;letter-spacing:.03em}
+.contact-social{margin-top:26px}
+.contact-card .contact-social .social-label{margin:0 0 12px;color:#dbe5df}
+.contact-social .social-link{color:#f7f3e9;border-color:#6b8174;background:rgba(255,255,255,.04)}
+.contact-social .social-link:hover{background:var(--gold);color:#153528;border-color:var(--gold)}
+.footer-social{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.footer-social .social-label{color:var(--muted)}
+@media(max-width:560px){.footer-social{align-items:flex-start;flex-direction:column}.social-links{gap:8px}.social-link{padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.social-link{transition:none}}
