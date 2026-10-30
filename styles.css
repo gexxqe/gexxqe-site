@@ -61,3 +61,10 @@ footer{padding:34px 0 45px;border-top:1px solid var(--line)}.footer-grid{display
 .footer-social .social-label{color:var(--muted)}
 @media(max-width:560px){.footer-social{align-items:flex-start;flex-direction:column}.social-links{gap:8px}.social-link{padding:10px 12px}}
 @media(prefers-reduced-motion:reduce){.social-link{transition:none}}
+
+/* Social profiles visible in the introductory section. */
+.hero-social{margin-top:26px}
+.hero-social .social-label{margin:0 0 12px;color:var(--muted);font-size:12px}
+.hero-social .social-link{background:var(--paper)}
+.hero-social .social-link:hover{background:var(--deep)}
+@media(max-width:560px){.hero-social{margin-top:24px}.hero-social .social-links{gap:8px}}
