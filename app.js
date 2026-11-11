@@ -4,13 +4,15 @@ menuBtn?.addEventListener('click',()=>{
   const open=nav.classList.toggle('open');
   menuBtn.setAttribute('aria-expanded',String(open));
   menuBtn.textContent=open?'✕':'☰';
+  menuBtn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
 });
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   nav.classList.remove('open');
   menuBtn?.setAttribute('aria-expanded','false');
-  if(menuBtn)menuBtn.textContent='☰';
+  if(menuBtn){menuBtn.textContent='☰';menuBtn.setAttribute('aria-label','Ouvrir le menu');}
 }));
-document.getElementById('year').textContent=new Date().getFullYear();
+const yearEl=document.getElementById('year');
+if(yearEl)yearEl.textContent=new Date().getFullYear();
 
 const revealEls=[...document.querySelectorAll('.reveal')];
 if('IntersectionObserver' in window){
