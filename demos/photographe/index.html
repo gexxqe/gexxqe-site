@@ -38,7 +38,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(244,241,236,.9);backdrop
 .avail i{width:8px;height:8px;border-radius:50%;background:#3aa65a}
 .hero-strip{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:14px;margin-top:44px;height:min(52vw,520px)}
 .ph{border-radius:6px;overflow:hidden;position:relative;background:#ccc}
-.ph svg{width:100%;height:100%;display:block}
+.ph svg,.ph img{width:100%;height:100%;display:block}.ph img{object-fit:cover}.hero-strip .ph img{height:100%}.lb-inner{background:transparent}.lb-inner{position:relative}.lb-inner img{transition:opacity .25s ease}.lb-inner.loading img{opacity:0}.lb-spin{display:none;position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;animation:lbspin .8s linear infinite}.lb-inner.loading .lb-spin{display:block}.lb-inner.lb-err:after{content:"Photo indisponible";position:absolute;inset:0;display:grid;place-items:center;color:#ccc;font-size:14px}@keyframes lbspin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.lb-spin{animation-duration:2.4s}}
 .ph:after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(transparent,rgba(0,0,0,.45));pointer-events:none}.ph .cap{z-index:1;position:absolute;left:14px;bottom:12px;color:#fff;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 section{padding:100px 0}
 .label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--muted)}
@@ -91,11 +91,11 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 .ok{display:none;padding:30px;border:1px solid var(--line);border-radius:16px}
 .ok.on{display:block}
 .small{font-size:12px;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(--muted)}
+.demo-info{padding:56px 0;border-top:1px solid var(--line)}.di-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:16px}.demo-info h3{font-size:28px;margin-bottom:8px}.demo-info ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}.demo-info li{margin:4px 0}@media(max-width:700px){.di-grid{grid-template-columns:1fr;gap:18px}}footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .lb{position:fixed;inset:0;background:rgba(10,10,10,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:30px}
 .lb.on{display:flex}
-.lb-inner{width:min(1000px,100%);max-height:85vh;aspect-ratio:3/2;border-radius:6px;overflow:hidden}
+.lb-inner{width:min(1100px,100%);height:min(82vh,100%);border-radius:6px;overflow:hidden}
 .lb-inner svg{width:100%;height:100%}
 .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:20px}
 .lb .close{top:20px;right:20px}.lb .prev{left:20px;top:50%}.lb .next{right:20px;top:50%}
@@ -105,7 +105,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(
 </style>
 </head>
 <body>
-<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — photographe fictive, images illustratives.</div>
+<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — photographe fictive ; photos de banque d’images (Unsplash), pas des travaux réels.</div>
 <header><div class="wrap nav"><a class="logo" href="#">Camille Arnaud<i>.</i></a><nav class="menu"><a href="#travaux">Travaux</a><a href="#apropos">À propos</a><a href="#offres">Offres</a><a href="#contact">Contact</a></nav><a class="btn btn-dark" href="#contact">Réserver une date</a></div></header>
 
 <section class="hero" style="padding-bottom:20px">
@@ -169,10 +169,12 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-size:14px;color:var(
   </div>
 </section>
 
+<section class="demo-info" aria-label="Ce que montre cette démo"><div class="wrap"><span class="label">À propos de cette démo</span><div class="di-grid"><div><h3>Fonctionnel</h3><ul><li>Portfolio filtrable par catégorie</li><li>Visionneuse plein écran (clavier et tactile)</li><li>Mise en page adaptée mobile, tablette et ordinateur</li></ul></div><div><h3>Simulé</h3><ul><li>Formulaire de contact : aucun envoi. Sur un vrai site, la demande part par e-mail (ou vers un outil de suivi).</li><li>Disponibilités 2027, tarifs et témoignage : contenus d’exemple.</li><li>Photographe fictive ; photos issues d’une banque d’images libre de droits.</li></ul></div></div></div></section>
 <footer><div class="wrap foot"><span>© Camille Arnaud — photographe fictive</span><span>Site démo réalisé par <a href="/" style="color:var(--accent)">gexxqe</a></span></div></footer>
 
 <div class="lb" id="lb" role="dialog" aria-label="Visionneuse"><button class="close" id="lbClose" aria-label="Fermer">✕</button><button class="prev" id="lbPrev" aria-label="Précédente">‹</button><div class="lb-inner" id="lbImg"></div><button class="next" id="lbNext" aria-label="Suivante">›</button><div class="lb-cap" id="lbCap"></div></div>
 
+<script src="photos.js"></script>
 <script>
 (function(){
 // Illustrative "photos": layered gradient scenes, no external images.
@@ -182,17 +184,23 @@ const scenes={
  wedding:(a)=>`<defs><linearGradient id="w${a}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe7da"/><stop offset="1" stop-color="#b9b19f"/></linearGradient></defs><rect width="300" height="400" fill="url(#w${a})"/><g fill="#a9b48f" opacity=".6"><circle cx="40" cy="60" r="40"/><circle cx="270" cy="40" r="50"/><circle cx="250" cy="120" r="30"/></g><path d="M120 400c0-80 10-160 40-190 30 30 40 110 40 190z" fill="#fffdf8"/><circle cx="160" cy="180" r="18" fill="#e5b99a"/><path d="M150 170c0-16 22-16 22 0" fill="#5a3b28"/><path d="M190 400c4-70 20-130 46-150 22 20 26 90 24 150z" fill="#2b2b2b"/><circle cx="238" cy="232" r="16" fill="#d9a888"/><path d="M226 224c4-12 22-12 26 0" fill="#2a1a12"/><g fill="#d27f6a"><circle cx="150" cy="260" r="8"/><circle cx="162" cy="266" r="7"/><circle cx="156" cy="252" r="6"/></g>`,
  office:(a)=>`<rect width="300" height="400" fill="#dfe3e2"/><rect x="0" y="0" width="300" height="230" fill="#c9d3d6"/><g fill="#f5f7f7"><rect x="20" y="20" width="80" height="150"/><rect x="110" y="20" width="80" height="150"/><rect x="200" y="20" width="80" height="150"/></g><rect x="40" y="250" width="220" height="16" fill="#8a6b4a"/><rect x="60" y="266" width="10" height="134" fill="#6b5238"/><rect x="230" y="266" width="10" height="134" fill="#6b5238"/><ellipse cx="150" cy="200" rx="26" ry="32" fill="#c99a7c"/><path d="M118 196c-2-36 20-50 34-48 22 2 34 22 28 50-8-18-18-26-30-30-10 10-20 16-32 28z" fill="#2a1a12"/><path d="M100 300c4-50 24-70 50-70s46 20 50 70z" fill="#2d3e50"/>`,
  sea:(a)=>`<defs><linearGradient id="m${a}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcd6dc"/><stop offset=".5" stop-color="#6f9ead"/><stop offset="1" stop-color="#2f5866"/></linearGradient></defs><rect width="300" height="400" fill="url(#m${a})"/><path d="M0 180h300v220H0z" fill="#3c7385" opacity=".5"/><path d="M0 210c40-6 80 6 120 0s80-6 180 4" stroke="#e8f2f3" stroke-width="2" fill="none" opacity=".6"/><path d="M200 400l20-160 60-30 20 190z" fill="#d7c7ae"/><path d="M0 400l0-90 70-40 60 130z" fill="#c4b294"/>`};
-const items=[["sunset",1,0,1,"mariage","Cérémonie au coucher du soleil","4/5"],["portrait",2,1,0,"portrait","Portrait en lumière naturelle","3/4"],["wedding",3,0,0,"mariage","Sortie de cérémonie","3/4"],["office",4,0,0,"pro","Portrait d’équipe","4/3"],["sea",5,0,0,"portrait","Séance couple, calanques","4/5"],["portrait",6,0,0,"pro","Portrait corporate","3/4"],["sunset",7,-40,0,"portrait","Golden hour","1/1"],["wedding",8,0,0,"mariage","Premier regard","4/5"],["sea",9,0,0,"mariage","Mariage en bord de mer","4/3"]];
+const items=[["sunset",1,0,1,"mariage","Au coucher du soleil","4/5"],["portrait",2,1,0,"portrait","Portrait en lumière naturelle","3/4"],["wedding",3,0,0,"mariage","Sortie de cérémonie","3/4"],["office",4,0,0,"pro","Portrait de dirigeant","4/3"],["sea",5,0,0,"portrait","Séance couple en bord de mer","4/5"],["portrait",6,0,0,"pro","Portrait corporate","3/4"],["sunset",7,-40,0,"portrait","Portrait studio","1/1"],["wedding",8,0,0,"mariage","Avant la cérémonie","4/5"],["sea",9,0,0,"mariage","Mariage en bord de mer","4/3"]];
+// Photos vérifiées (Unsplash, licence Unsplash). Clé = index du portfolio. Sans entrée : illustration conservée.
+const PHOTOS=window.PHOTOS||{};const ABOUT_PHOTO=window.ABOUT_PHOTO||null;
+const pic=(p,ratio,eager)=>`<img src="img/${p.f}-800.webp" srcset="img/${p.f}-800.webp 800w, img/${p.f}-1600.webp 1600w" sizes="(max-width:900px) 100vw, 40vw" width="${p.w||800}" height="${p.h||1000}" alt="${p.alt}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async" style="aspect-ratio:${ratio||'auto'};object-position:${p.pos||'50% 50%'}">`;
+const visual=(it,i,ratio,eager)=>PHOTOS[i]?pic(PHOTOS[i],PHOTOS[i].r||ratio,eager):svg(it,ratio);
 const svg=(it,ratio)=>`<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" style="aspect-ratio:${ratio||'auto'}">${scenes[it[0]](it[1],it[2],it[3])}</svg>`;
 const g=document.getElementById('gallery');
-g.innerHTML=items.map((it,i)=>`<div class="ph" data-cat="${it[4]}" data-i="${i}" role="button" tabindex="0" aria-label="${it[5]}">${svg(it,it[6])}<span class="cap">${it[5]}</span></div>`).join('');
-document.getElementById('heroStrip').innerHTML=[items[0],items[1],items[4]].map((it,k)=>`<div class="ph">${svg([it[0],100+k,it[2],it[3]])}<span class="cap">${it[5]}</span></div>`).join('');
-document.getElementById('aboutPh').innerHTML=svg(["portrait",200,1,0]);
+const HAS_PHOTOS=Object.keys(PHOTOS).length>0;
+// Tant que des photos existent, les éléments encore illustrés sont masqués du portfolio.
+g.innerHTML=items.map((it,i)=>HAS_PHOTOS&&!PHOTOS[i]?'':`<div class="ph" data-cat="${it[4]}" data-i="${i}" role="button" tabindex="0" aria-label="${it[5]}">${visual(it,i,it[6])}<span class="cap">${it[5]}</span></div>`).join('');
+document.getElementById('heroStrip').innerHTML=[0,1,4].map((i,k)=>{const it=items[i];return `<div class="ph">${PHOTOS[i]?pic(PHOTOS[i],null,true):svg([it[0],100+k,it[2],it[3]])}`+`<span class="cap">${it[5]}</span></div>`}).join('');
+document.getElementById('aboutPh').innerHTML=ABOUT_PHOTO?pic(ABOUT_PHOTO,'4/5'):svg(["portrait",200,1,0]);
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.f');if(!b)return;document.querySelectorAll('.f').forEach(x=>x.classList.toggle('on',x===b));g.querySelectorAll('.ph').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.cat!==b.dataset.f))});
 // lightbox
 const lb=document.getElementById('lb');let cur=0;
 const vis=()=>[...g.querySelectorAll('.ph:not(.hide)')].map(p=>+p.dataset.i);
-function show(i){cur=i;const it=items[i];document.getElementById('lbImg').innerHTML=`<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">${scenes[it[0]](300+i,it[2],it[3])}</svg>`;document.getElementById('lbCap').textContent=it[5];lb.classList.add('on')}
+function show(i){cur=i;const it=items[i];const p=PHOTOS[i];const box=document.getElementById('lbImg');box.classList.remove('lb-err');box.classList.toggle('loading',!!p);box.innerHTML=p?`<span class="lb-spin" role="status" aria-label="Chargement de la photo"></span><img src="img/${p.f}-1600.webp" alt="${p.alt}" onload="var b=this.parentNode;if(b)b.classList.remove('loading')" onerror="var b=this.parentNode;if(b){b.classList.remove('loading');b.classList.add('lb-err')}" style="width:100%;height:100%;object-fit:contain">`:`<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">${scenes[it[0]](300+i,it[2],it[3])}</svg>`;document.getElementById('lbCap').textContent=it[5];lb.classList.add('on')}
 function step(d){const v=vis();const k=v.indexOf(cur);show(v[(k+d+v.length)%v.length])}
 g.addEventListener('click',e=>{const p=e.target.closest('.ph');if(p)show(+p.dataset.i)});
 g.addEventListener('keydown',e=>{if(e.key==='Enter'){const p=e.target.closest('.ph');if(p)show(+p.dataset.i)}});
