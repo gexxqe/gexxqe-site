@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blush:#f6ece6;--rose:#e9cfc4;--terra:#a8553c;--terra2:#8d4430;--ink:#2b1f1b;--muted:#7b6a63;--line:#ead9d0;--cream:#fffaf6}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.08;margin:0;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
@@ -38,7 +38,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,250,246,.92);backdro
 .hero-meta b{display:block;font-family:Fraunces,serif;font-size:24px;color:var(--ink);font-weight:500}
 .arch-wrap{position:relative;justify-self:center;width:min(100%,460px)}
 .arch{aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;background:linear-gradient(170deg,#e7c1b2,#c98d77 55%,#9b5a45)}
-.arch svg{width:100%;height:100%}
+.arch svg,.arch img{width:100%;height:100%;display:block;object-fit:cover}
 .float-card{position:absolute;background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 20px 40px rgba(80,40,30,.15);font-size:14px}
 .float-card b{display:block;font-size:15px}
 .fc1{left:-30px;bottom:60px}.fc2{right:-20px;top:50px;text-align:center}
@@ -103,21 +103,21 @@ input:focus{outline:none;border-color:var(--terra)}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px;grid-auto-flow:dense}
 .g{border-radius:18px;overflow:hidden}
 .g:nth-child(1){grid-row:span 2}.g:nth-child(4){grid-column:span 2}
-.g svg{width:100%;height:100%}
+.g{margin:0}.g svg,.g img{width:100%;height:100%;display:block;object-fit:cover}
 .info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
 .info-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
 .info-card h3{font-size:22px;margin-bottom:12px}
 .hours div{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;border-bottom:1px dashed var(--line)}
 .hours div:last-child{border:0}
-footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
+.demo-info{padding:60px 0;border-top:1px solid var(--line)}.di-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:14px}.demo-info h3{font-size:24px;margin-bottom:8px}.demo-info ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}.demo-info li{margin:4px 0}@media(max-width:700px){.di-grid{grid-template-columns:1fr;gap:16px}}footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 .foot .logo{color:#fff}
-@media(max-width:960px){.menu{display:none}.hero-grid,.booking{grid-template-columns:1fr}.summary{position:static}.team{grid-template-columns:1fr 1fr 1fr;gap:12px}.info{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.g:nth-child(4){grid-column:span 1}}
+@media(max-width:960px){.menu{display:none}.hero-grid,.booking{grid-template-columns:1fr}.summary{position:static}.team{grid-template-columns:1fr 1fr 1fr;gap:12px}.info{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.g:nth-child(4){grid-column:span 1}.g:nth-child(6){grid-column:span 2}}
 @media(max-width:620px){section{padding:70px 0}.nav .btn{padding:10px 16px;font-size:14px}.fc1{left:0}.fc2{right:0}.svc-grid{grid-template-columns:1fr}.days{grid-template-columns:repeat(4,1fr)}.slots{grid-template-columns:repeat(3,1fr)}.panel{padding:22px}.price-list{padding:6px 20px}.pl-item{grid-template-columns:1fr auto}.dur{grid-column:1}.team{grid-template-columns:1fr}.portrait{max-width:260px;margin:0 auto 16px}}
 </style>
 </head>
 <body>
-<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — salon fictif, réservations non réelles.</div>
+<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — salon fictif, équipe fictive ; photos illustratives de banque d’images (Unsplash) ; réservations non réelles.</div>
 <header><div class="wrap nav"><a class="logo" href="#">Maison <i>Iris</i></a><nav class="menu"><a href="#tarifs">Prestations</a><a href="#rdv">Rendez-vous</a><a href="#equipe">Équipe</a><a href="#galerie">Galerie</a><a href="#infos">Infos</a></nav><a class="btn btn-terra" href="#rdv">Prendre RDV</a></div></header>
 
 <section class="hero">
@@ -130,18 +130,8 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
       <div class="hero-meta"><div><b>4,9/5</b>note moyenne (exemple)</div><div><b>3</b>coiffeuses passionnées</div><div><b>Mar–Sam</b>9h – 19h</div></div>
     </div>
     <div class="arch-wrap">
-      <div class="arch" aria-hidden="true">
-        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
-          <circle cx="320" cy="90" r="90" fill="#f3d6c9" opacity=".5"/>
-          <path d="M120 500c0-110 40-170 80-170s80 60 80 170z" fill="#5d2f22"/>
-          <ellipse cx="200" cy="245" rx="58" ry="70" fill="#f0c7ae"/>
-          <g fill="none" stroke="#7a3b28" stroke-width="3" stroke-linecap="round"><path d="M176 240q9 6 18 0"/><path d="M206 240q9 6 18 0"/></g><path d="M186 282q14 10 28 0" stroke="#a8553c" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="172" cy="262" r="9" fill="#e8a58e" opacity=".5"/><circle cx="228" cy="262" r="9" fill="#e8a58e" opacity=".5"/><path d="M132 250c-6-90 40-130 80-128 52 2 84 46 70 122-10-36-20-60-42-74-28 20-70 34-108 80z" fill="#3b1d14"/>
-          <path d="M132 250c-12 80 4 150 20 190l26-8c-14-50-22-110-20-170zM282 244c14 80-4 150-20 196l-26-8c16-50 24-110 22-170z" fill="#3b1d14"/>
-          <path d="M150 330c30 30 70 30 100 0l10 40c-40 26-80 26-120 0z" fill="#f0c7ae"/>
-          <g stroke="#fff" stroke-width="2" opacity=".55" fill="none"><path d="M60 120c20-10 30 10 50 0"/><path d="M300 380c20-10 30 10 50 0"/></g>
-        </svg>
-      </div>
-      <div class="float-card fc1"><b>Prochain créneau libre</b><span class="small">Aujourd’hui avec Léa</span><div class="slots-mini"><span>14:30</span><span class="on">15:00</span><span>16:30</span></div></div>
+      <div class="arch"><img src="img/hero-coiffeuse-600.webp" srcset="img/hero-coiffeuse-600.webp 600w, img/hero-coiffeuse-1000.webp 1000w" sizes="(max-width:960px) 90vw, 460px" width="600" height="750" alt="Coiffeuse souriante réalisant un brushing au sèche-cheveux" fetchpriority="high" decoding="async"></div>
+      <div class="float-card fc1" id="nextCard"><b>Prochain créneau libre</b><span class="small" id="nextWhen">avec Léa</span><div class="slots-mini" id="nextSlots"></div></div>
       <div class="float-card fc2"><span class="big">−10 %</span><br><span class="small">1ʳᵉ visite</span></div>
     </div>
   </div>
@@ -197,14 +187,14 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
 
 <section id="galerie" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Le salon</span><h2>Un lieu pensé pour se poser.</h2></div>
-    <div class="gallery" aria-hidden="true">
-      <div class="g"><svg viewBox="0 0 200 380" preserveAspectRatio="xMidYMid slice"><rect width="200" height="380" fill="#e9cfc4"/><rect x="40" y="40" width="120" height="170" rx="60" fill="#fff" opacity=".7"/><rect x="60" y="240" width="80" height="90" rx="10" fill="#a8553c"/><rect x="50" y="230" width="100" height="16" rx="8" fill="#8d4430"/></svg></div>
-      <div class="g"><svg viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice"><rect width="200" height="180" fill="#f4e4da"/><circle cx="100" cy="90" r="50" fill="#c98d77"/><path d="M60 100c20-40 60-40 80 0" stroke="#fff" stroke-width="6" fill="none"/></svg></div>
-      <div class="g"><svg viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice"><rect width="200" height="180" fill="#2b1f1b"/><g fill="#e9cfc4"><rect x="30" y="60" width="20" height="80" rx="6"/><rect x="60" y="40" width="20" height="100" rx="6"/><rect x="90" y="70" width="20" height="70" rx="6"/><rect x="120" y="50" width="20" height="90" rx="6"/><rect x="150" y="80" width="20" height="60" rx="6"/></g></svg></div>
-      <div class="g"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice"><rect width="400" height="180" fill="#d8b4a4"/><path d="M0 140c80-40 160 20 240-10s120-50 160-20v70H0z" fill="#a8553c" opacity=".6"/><circle cx="320" cy="50" r="26" fill="#fff" opacity=".6"/></svg></div>
-      <div class="g"><svg viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice"><rect width="200" height="180" fill="#fbf0eb"/><path d="M100 30c30 40 30 80 0 120-30-40-30-80 0-120z" fill="#7d8f6a"/><rect x="80" y="140" width="40" height="30" rx="4" fill="#a8553c"/></svg></div>
-      <div class="g"><svg viewBox="0 0 200 180" preserveAspectRatio="xMidYMid slice"><rect width="200" height="180" fill="#c98d77"/><rect x="50" y="30" width="100" height="120" rx="50" fill="#f6ece6" opacity=".85"/></svg></div>
+    <div class="sec-head"><span class="eyebrow">En images</span><h2>Un lieu pensé pour se poser.</h2></div>
+    <div class="gallery">
+      <figure class="g"><img src="img/brosse-cheveux-700.webp" width="700" height="1050" alt="Brushing à la brosse ronde sur cheveux blonds" loading="lazy" decoding="async" style="object-position:50% 35%"></figure>
+      <figure class="g"><img src="img/salon-fauteuils-700.webp" width="700" height="467" alt="Fauteuils roses face au grand miroir" loading="lazy" decoding="async" style="object-position:50% 60%"></figure>
+      <figure class="g"><img src="img/brushing-700.webp" width="700" height="467" alt="Brushing au sèche-cheveux" loading="lazy" decoding="async" style="object-position:50% 40%"></figure>
+      <figure class="g"><img src="img/outils-700.webp" width="700" height="467" alt="Brosses, ciseaux et pinceau à coloration" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+      <figure class="g"><img src="img/boucles-700.webp" width="700" height="467" alt="Mise en boucles au fer à friser" loading="lazy" decoding="async" style="object-position:40% 30%"></figure>
+      <figure class="g"><img src="img/soin-lavage-700.webp" width="700" height="467" alt="Shampoing et soin au bac" loading="lazy" decoding="async" style="object-position:55% 45%"></figure>
     </div>
   </div>
 </section>
@@ -217,6 +207,7 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
   </div>
 </section>
 
+<section class="demo-info" aria-label="Ce que montre cette démo"><div class="wrap"><span class="eyebrow">À propos de cette démo</span><div class="di-grid"><div><h3>Fonctionnel</h3><ul><li>Onglets de tarifs par catégorie</li><li>Parcours de réservation : prestation, coiffeuse, jour, créneau, récapitulatif</li><li>Mise en page adaptée mobile, tablette et ordinateur</li></ul></div><div><h3>Simulé</h3><ul><li>Créneaux et disponibilités : générés pour la démo, aucune réservation n’est créée.</li><li>Pour un vrai salon : connexion à l’agenda (Planity, Google Agenda…) et rappels SMS via un service dédié.</li><li>Salon et équipe fictifs ; avis et note d’exemple ; photos de banque d’images.</li></ul></div></div></div></section>
 <footer><div class="wrap foot"><span class="logo">Maison <i style="color:#f1b9a5">Iris</i></span><span>Salon fictif · Site démo réalisé par <a href="/" style="color:#f1b9a5">gexxqe</a></span></div></footer>
 
 <script>
@@ -245,16 +236,24 @@ sEl.addEventListener('click',e=>{const b=e.target.closest('.staff');if(!b)return
 const daysEl=document.getElementById('days');const days=[];const d0=new Date();
 for(let k=0;days.length<7;k++){const d=new Date(d0);d.setDate(d0.getDate()+k);days.push(d)}
 const dn=['dim','lun','mar','mer','jeu','ven','sam'],mn=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
-daysEl.innerHTML=days.map((d,i)=>{const closed=d.getDay()===0||d.getDay()===1;return `<button type="button" class="day" data-i="${i}" ${closed?'disabled title="Fermé"':''}><small>${dn[d.getDay()]}</small><b>${d.getDate()}</b><small>${mn[d.getMonth()]}</small></button>`}).join('');
+daysEl.innerHTML=days.map((d,i)=>{const lastSlot=(d.getDay()===6?18:19)*60-30,nowMin=d0.getHours()*60+d0.getMinutes();const closed=d.getDay()===0||d.getDay()===1||(i===0&&nowMin>=lastSlot);return `<button type="button" class="day" data-i="${i}" ${closed?'disabled title="Fermé"':''}><small>${dn[d.getDay()]}</small><b>${d.getDate()}</b><small>${mn[d.getMonth()]}</small></button>`}).join('');
 daysEl.addEventListener('click',e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;daysEl.querySelectorAll('.day').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.day=days[+b.dataset.i];st.slot=null;renderSlots();sum()});
 const slotsEl=document.getElementById('slots'),hint=document.getElementById('slotHint');
 function seeded(n){let x=Math.sin(n)*10000;return x-Math.floor(x)}
+// Source unique des disponibilités : utilisée par le formulaire ET par la carte « Prochain créneau libre ».
+function slotsFor(day,staff){const end=day.getDay()===6?18:19;const times=[];for(let h=9;h<end;h++)for(const m of[0,30])times.push(`${h}:${m?'30':'00'}`);
+ const seed=day.getDate()*7+staff.length;const now=new Date();const today=day.toDateString()===now.toDateString();
+ return times.map((t,i)=>{const [h,m]=t.split(':').map(Number);const past=today&&(h*60+m)<=now.getHours()*60+now.getMinutes();return {t,taken:past||seeded(seed+i)<.35}})}
 function renderSlots(){if(!st.day){slotsEl.innerHTML='';return}
- const end=st.day.getDay()===6?18:19;const times=[];for(let h=9;h<end;h++)for(const m of[0,30])times.push(`${h}:${m?'30':'00'}`);
- const seed=st.day.getDate()*7+st.staff.length;
- const now=new Date();const today=st.day.toDateString()===now.toDateString();
- slotsEl.innerHTML=times.map((t,i)=>{const [h,m]=t.split(':').map(Number);const past=today&&(h*60+m)<=now.getHours()*60+now.getMinutes();const taken=past||seeded(seed+i)<.35;return `<button type="button" class="slot${st.slot===t?' sel':''}" ${taken?'disabled':''}>${t}</button>`}).join('');
+ slotsEl.innerHTML=slotsFor(st.day,st.staff).map(x=>`<button type="button" class="slot${st.slot===x.t?' sel':''}" ${x.taken?'disabled':''}>${x.t}</button>`).join('');
  hint.textContent=st.svc?'Les créneaux barrés sont déjà pris.':'Astuce : choisissez aussi une prestation.';}
+(function nextFree(){const staff='Léa';
+ for(let i=0;i<days.length;i++){const b=daysEl.querySelector(`.day[data-i="${i}"]`);if(!b||b.disabled)continue;
+  const free=slotsFor(days[i],staff).filter(x=>!x.taken).slice(0,3);if(!free.length)continue;
+  const when=i===0?'Aujourd’hui':i===1?'Demain':`${dn[days[i].getDay()]} ${days[i].getDate()} ${mn[days[i].getMonth()]}`;
+  document.getElementById('nextWhen').textContent=`${when} avec ${staff}`;
+  document.getElementById('nextSlots').innerHTML=free.map((x,k)=>`<span${k===0?' class="on"':''}>${x.t}</span>`).join('');return}
+ document.getElementById('nextCard').hidden=true;})();
 slotsEl.addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;slotsEl.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.slot=b.textContent;sum()});
 const $=id=>document.getElementById(id);
 function dateTxt(){return st.day?`${dn[st.day.getDay()]} ${st.day.getDate()} ${mn[st.day.getMonth()]}${st.slot?' · '+st.slot:''}`:'—'}
