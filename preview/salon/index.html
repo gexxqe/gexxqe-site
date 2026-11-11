@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f6ece6">
+<title>Maison Iris — Coiffure & Beauté (site démo)</title>
+<link rel="icon" href="/favicon-gq.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#f6ece6;--rose:#e9cfc4;--terra:#a8553c;--terra2:#8d4430;--ink:#2b1f1b;--muted:#7b6a63;--line:#ead9d0;--cream:#fffaf6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.08;margin:0;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+.demo-bar{background:var(--ink);color:#eadfd9;font-size:12px;text-align:center;padding:8px 14px}
+.demo-bar a{color:#f1b9a5;font-weight:700;text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Fraunces,serif;font-size:26px;font-weight:500;letter-spacing:-.02em}
+.logo i{font-style:italic;color:var(--terra)}
+.menu{display:flex;gap:28px;font-size:14px;font-weight:500;color:#5b4a43}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:.2s}
+.btn-terra{background:var(--terra);color:#fff}.btn-terra:hover{background:var(--terra2)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.hero{padding:70px 0 90px;background:linear-gradient(180deg,var(--blush),var(--cream))}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);font-weight:700}
+.hero h1{font-size:clamp(44px,6vw,80px);margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero p{font-size:18px;color:var(--muted);max-width:480px;margin:0 0 30px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:26px;margin-top:40px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.hero-meta b{display:block;font-family:Fraunces,serif;font-size:24px;color:var(--ink);font-weight:500}
+.arch-wrap{position:relative;justify-self:center;width:min(100%,460px)}
+.arch{aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;background:linear-gradient(170deg,#e7c1b2,#c98d77 55%,#9b5a45)}
+.arch svg,.arch img{width:100%;height:100%;display:block;object-fit:cover}
+.float-card{position:absolute;background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 20px 40px rgba(80,40,30,.15);font-size:14px}
+.float-card b{display:block;font-size:15px}
+.fc1{left:-30px;bottom:60px}.fc2{right:-20px;top:50px;text-align:center}
+.fc2 .big{font-family:Fraunces;font-size:28px;color:var(--terra)}
+.slots-mini{display:flex;gap:6px;margin-top:8px}
+.slots-mini span{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+.slots-mini span.on{background:var(--terra);color:#fff;border-color:var(--terra)}
+section{padding:96px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(34px,4.5vw,52px);margin-top:12px}
+.sec-head p{color:var(--muted);font-size:17px;margin:14px 0 0}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:34px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:inherit;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.price-list{max-width:820px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:26px;padding:12px 34px}
+.pl-item{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.pl-item:last-child{border-bottom:0}
+.pl-item h3{font-size:20px}
+.pl-item p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.dur{font-size:13px;color:var(--muted);white-space:nowrap}
+.price{font-family:Fraunces;font-size:22px;color:var(--terra);white-space:nowrap}
+.book-sec{background:var(--blush)}
+.booking{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:start}
+.panel{background:#fff;border-radius:26px;padding:30px;border:1px solid var(--line)}
+.panel h3{font-size:22px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.num{width:28px;height:28px;border-radius:50%;background:var(--terra);color:#fff;font-family:"DM Sans";font-size:13px;font-weight:700;display:grid;place-items:center}
+.block{padding:22px 0;border-bottom:1px solid var(--line)}
+.block:first-child{padding-top:0}.block:last-child{border-bottom:0;padding-bottom:0}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.svc-opt{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:#fff;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:flex;justify-content:space-between;gap:8px}
+.svc-opt small{display:block;color:var(--muted);font-size:12px}
+.svc-opt.sel,.day.sel,.slot.sel,.staff.sel{border-color:var(--terra);background:#fbf0eb}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}
+.day{border:1.5px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center;background:#fff;cursor:pointer;font:inherit;color:var(--ink)}
+.day small{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.day b{font-family:Fraunces;font-size:22px;font-weight:500}
+.day:disabled{opacity:.35;cursor:not-allowed}
+.slots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.slot{border:1.5px solid var(--line);border-radius:10px;padding:9px 0;background:#fff;cursor:pointer;font:inherit;font-weight:600;font-size:14px;color:var(--ink)}
+.slot:disabled{text-decoration:line-through;opacity:.35;cursor:not-allowed}
+.staffs{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.staff{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;background:#fff;cursor:pointer;font:inherit;color:var(--ink);font-weight:600;font-size:14px}
+.av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+.hint{font-size:14px;color:var(--muted);margin:4px 0 0}
+.summary{position:sticky;top:96px}
+.sum-row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.sum-row span{color:var(--muted)}
+.sum-total{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 18px}
+.sum-total b{font-family:Fraunces;font-size:30px;color:var(--terra);font-weight:500}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 5px}
+input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;background:var(--cream)}
+input:focus{outline:none;border-color:var(--terra)}
+.full{width:100%}
+.ok{display:none;text-align:center;padding:10px 0}
+.ok.on{display:block}
+.ok .check{width:62px;height:62px;border-radius:50%;background:#f4e1d9;color:var(--terra);display:grid;place-items:center;margin:0 auto 14px}
+.small{font-size:12px;color:var(--muted)}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.member{text-align:center}
+.portrait{aspect-ratio:3/4;max-width:280px;margin-left:auto;margin-right:auto;border-radius:200px 200px 20px 20px;margin-bottom:16px;display:grid;place-items:center;font-family:Fraunces;font-size:64px;color:rgba(255,255,255,.9)}
+.member h3{font-size:22px}.member p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px;grid-auto-flow:dense}
+.g{border-radius:18px;overflow:hidden}
+.g:nth-child(1){grid-row:span 2}.g:nth-child(4){grid-column:span 2}
+.g{margin:0}.g svg,.g img{width:100%;height:100%;display:block;object-fit:cover}
+.info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
+.info-card h3{font-size:22px;margin-bottom:12px}
+.hours div{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.hours div:last-child{border:0}
+.demo-info{padding:60px 0;border-top:1px solid var(--line)}.di-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:14px}.demo-info h3{font-size:24px;margin-bottom:8px}.demo-info ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}.demo-info li{margin:4px 0}@media(max-width:700px){.di-grid{grid-template-columns:1fr;gap:16px}}footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.foot .logo{color:#fff}
+@media(max-width:960px){.menu{display:none}.hero-grid,.booking{grid-template-columns:1fr}.summary{position:static}.team{grid-template-columns:1fr 1fr 1fr;gap:12px}.info{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.g:nth-child(4){grid-column:span 1}.g:nth-child(6){grid-column:span 2}}
+@media(max-width:620px){section{padding:70px 0}.nav .btn{padding:10px 16px;font-size:14px}.fc1{left:0}.fc2{right:0}.svc-grid{grid-template-columns:1fr}.days{grid-template-columns:repeat(4,1fr)}.slots{grid-template-columns:repeat(3,1fr)}.panel{padding:22px}.price-list{padding:6px 20px}.pl-item{grid-template-columns:1fr auto}.dur{grid-column:1}.team{grid-template-columns:1fr}.portrait{max-width:260px;margin:0 auto 16px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — salon fictif, équipe fictive ; photos illustratives de banque d’images (Unsplash) ; réservations non réelles.</div>
+<header><div class="wrap nav"><a class="logo" href="#">Maison <i>Iris</i></a><nav class="menu"><a href="#tarifs">Prestations</a><a href="#rdv">Rendez-vous</a><a href="#equipe">Équipe</a><a href="#galerie">Galerie</a><a href="#infos">Infos</a></nav><a class="btn btn-terra" href="#rdv">Prendre RDV</a></div></header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Coiffure · Couleur · Soins</span>
+      <h1>Prenez soin de vous, <em>sans attendre.</em></h1>
+      <p>Un salon lumineux au cœur de Bordeaux. Réservez votre créneau en ligne en moins d’une minute, 24h/24.</p>
+      <div class="hero-ctas"><a class="btn btn-terra" href="#rdv">Réserver en ligne</a><a class="btn btn-line" href="#tarifs">Voir les tarifs</a></div>
+      <div class="hero-meta"><div><b>4,9/5</b>note moyenne (exemple)</div><div><b>3</b>coiffeuses passionnées</div><div><b>Mar–Sam</b>9h – 19h</div></div>
+    </div>
+    <div class="arch-wrap">
+      <div class="arch"><img src="img/hero-coiffeuse-600.webp" srcset="img/hero-coiffeuse-600.webp 600w, img/hero-coiffeuse-1000.webp 1000w" sizes="(max-width:960px) 90vw, 460px" width="600" height="750" alt="Coiffeuse souriante réalisant un brushing au sèche-cheveux" fetchpriority="high" decoding="async"></div>
+      <div class="float-card fc1"><b>Prochain créneau libre</b><span class="small">Demain avec Léa</span><div class="slots-mini"><span>14:30</span><span class="on">15:00</span><span>16:30</span></div></div>
+      <div class="float-card fc2"><span class="big">−10 %</span><br><span class="small">1ʳᵉ visite</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Prestations & tarifs</span><h2>Des tarifs clairs, affichés.</h2><p>Prix indicatifs pour cheveux mi-longs. Le diagnostic est toujours offert.</p></div>
+    <div class="tabs" role="tablist"><button class="tab on" data-cat="coupe">Coupes</button><button class="tab" data-cat="couleur">Couleur</button><button class="tab" data-cat="soin">Soins</button></div>
+    <div class="price-list" id="priceList"></div>
+  </div>
+</section>
+
+<section id="rdv" class="book-sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Réservation en ligne</span><h2>Votre rendez-vous en 3 étapes.</h2><p>Choisissez votre prestation, votre coiffeuse et votre créneau.</p></div>
+    <div class="booking">
+      <div class="panel">
+        <div class="block"><h3><span class="num">1</span>Prestation</h3><div class="svc-grid" id="svcGrid"></div></div>
+        <div class="block"><h3><span class="num">2</span>Avec qui ?</h3><div class="staffs" id="staffs"></div></div>
+        <div class="block"><h3><span class="num">3</span>Date & heure</h3><div class="days" id="days"></div><div class="slots" id="slots"></div><p class="hint" id="slotHint">Choisissez un jour pour voir les créneaux.</p></div>
+      </div>
+      <aside class="panel summary">
+        <div id="sumForm">
+          <h3>Récapitulatif</h3>
+          <div class="sum-row"><span>Prestation</span><b id="sSvc">—</b></div>
+          <div class="sum-row"><span>Coiffeuse</span><b id="sStaff">Sans préférence</b></div>
+          <div class="sum-row"><span>Date</span><b id="sDate">—</b></div>
+          <div class="sum-row"><span>Durée</span><b id="sDur">—</b></div>
+          <div class="sum-total"><span>Total</span><b id="sPrice">0 €</b></div>
+          <label for="b-name">Prénom et nom</label><input id="b-name" autocomplete="off">
+          <label for="b-tel">Téléphone</label><input id="b-tel" type="tel" autocomplete="off">
+          <p class="small" id="bErr" role="alert" style="color:var(--terra2)"></p>
+          <button class="btn btn-terra full" id="confirm">Confirmer le rendez-vous</button>
+          <p class="small" style="text-align:center;margin-top:10px">Paiement sur place · Annulation gratuite 24 h avant</p><p class="small" style="text-align:center;margin-top:4px">Démo : créneaux simulés, aucune réservation réelle.</p>
+        </div>
+        <div class="ok" id="ok"><div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3 style="justify-content:center">C’est réservé !</h3><p id="okText" class="hint"></p><p class="small">Démo : aucune réservation n’a été créée. Pour un vrai salon, ce module se relie à l’agenda du salon (Planity, Google Agenda…) et peut envoyer des rappels par SMS.</p><button class="btn btn-line full" id="again" style="margin-top:12px">Nouvelle réservation</button></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">L’équipe</span><h2>Trois coiffeuses passionnées.</h2></div>
+    <div class="team">
+      <div class="member"><div class="portrait" style="background:linear-gradient(170deg,#e7c1b2,#b9715a)">L</div><h3>Léa</h3><p>Fondatrice · Coupes & balayages</p></div>
+      <div class="member"><div class="portrait" style="background:linear-gradient(170deg,#d9c3b5,#8e6c5c)">N</div><h3>Nora</h3><p>Coloriste · Couleurs végétales</p></div>
+      <div class="member"><div class="portrait" style="background:linear-gradient(170deg,#ecd5c7,#c1866b)">I</div><h3>Inès</h3><p>Soins & coiffures de mariage</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="galerie" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">En images</span><h2>Un lieu pensé pour se poser.</h2></div>
+    <div class="gallery">
+      <figure class="g"><img src="img/brosse-cheveux-700.webp" width="700" height="1050" alt="Brushing à la brosse ronde sur cheveux blonds" loading="lazy" decoding="async" style="object-position:50% 35%"></figure>
+      <figure class="g"><img src="img/salon-fauteuils-700.webp" width="700" height="467" alt="Fauteuils roses face au grand miroir" loading="lazy" decoding="async" style="object-position:50% 60%"></figure>
+      <figure class="g"><img src="img/brushing-700.webp" width="700" height="467" alt="Brushing au sèche-cheveux" loading="lazy" decoding="async" style="object-position:50% 40%"></figure>
+      <figure class="g"><img src="img/outils-700.webp" width="700" height="467" alt="Brosses, ciseaux et pinceau à coloration" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+      <figure class="g"><img src="img/boucles-700.webp" width="700" height="467" alt="Mise en boucles au fer à friser" loading="lazy" decoding="async" style="object-position:40% 30%"></figure>
+      <figure class="g"><img src="img/soin-lavage-700.webp" width="700" height="467" alt="Shampoing et soin au bac" loading="lazy" decoding="async" style="object-position:55% 45%"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="infos" style="padding-top:0">
+  <div class="wrap info">
+    <div class="info-card"><h3>Adresse</h3><p>12 rue des Lilas<br>33000 Bordeaux</p><p class="small">Tram B · arrêt fictif « Les Lilas »</p></div>
+    <div class="info-card"><h3>Horaires</h3><div class="hours"><div><span>Mardi – Vendredi</span><b>9h – 19h</b></div><div><span>Samedi</span><b>9h – 18h</b></div><div><span>Dimanche, lundi</span><b>Fermé</b></div></div></div>
+    <div class="info-card"><h3>Contact</h3><p>01 99 00 45 67<br>bonjour@maison-iris.exemple</p><a class="btn btn-terra" href="#rdv" style="margin-top:6px">Réserver</a></div>
+  </div>
+</section>
+
+<section class="demo-info" aria-label="Ce que montre cette démo"><div class="wrap"><span class="eyebrow">À propos de cette démo</span><div class="di-grid"><div><h3>Fonctionnel</h3><ul><li>Onglets de tarifs par catégorie</li><li>Parcours de réservation : prestation, coiffeuse, jour, créneau, récapitulatif</li><li>Mise en page adaptée mobile, tablette et ordinateur</li></ul></div><div><h3>Simulé</h3><ul><li>Créneaux et disponibilités : générés pour la démo, aucune réservation n’est créée.</li><li>Pour un vrai salon : connexion à l’agenda (Planity, Google Agenda…) et rappels SMS via un service dédié.</li><li>Salon et équipe fictifs ; avis et note d’exemple ; photos de banque d’images.</li></ul></div></div></div></section>
+<footer><div class="wrap foot"><span class="logo">Maison <i style="color:#f1b9a5">Iris</i></span><span>Salon fictif · Site démo réalisé par <a href="/" style="color:#f1b9a5">gexxqe</a></span></div></footer>
+
+<script>
+(function(){
+const services={
+ coupe:[["Coupe & brushing femme","Shampoing, coupe, coiffage",45,55],["Coupe homme","Shampoing, coupe, finition",30,28],["Coupe enfant","Moins de 12 ans",30,20],["Brushing","Shampoing et mise en forme",30,32]],
+ couleur:[["Couleur racines","Couleur + brushing",75,62],["Balayage","Éclaircissement naturel + soin",120,110],["Couleur végétale","100 % plantes, + brushing",120,85]],
+ soin:[["Soin profond","Masque et massage crânien",30,25],["Lissage brésilien","Selon longueur",150,180],["Chignon de mariage","Essai inclus",90,95]]};
+const all=[].concat(...Object.values(services));
+const fmtDur=m=>m>=60?`${Math.floor(m/60)} h${m%60?String(m%60).padStart(2,'0'):''}`:`${m} min`;
+// price list
+const list=document.getElementById('priceList');
+function renderList(cat){list.innerHTML=services[cat].map(s=>`<div class="pl-item"><div><h3>${s[0]}</h3><p>${s[1]}</p></div><span class="dur">${fmtDur(s[2])}</span><span class="price">${s[3]} €</span></div>`).join('')}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');renderList(t.dataset.cat)}));
+renderList('coupe');
+// booking
+const st={svc:null,staff:'Sans préférence',day:null,slot:null};
+const svcGrid=document.getElementById('svcGrid');
+const quick=[all[0],all[1],all[4],all[5],all[7],all[3]];
+svcGrid.innerHTML=quick.map((s,i)=>`<button type="button" class="svc-opt" data-i="${i}"><span>${s[0]}<small>${fmtDur(s[2])}</small></span><b>${s[3]} €</b></button>`).join('');
+svcGrid.addEventListener('click',e=>{const b=e.target.closest('.svc-opt');if(!b)return;svcGrid.querySelectorAll('.svc-opt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.svc=quick[+b.dataset.i];st.slot=null;renderSlots();sum()});
+const staffs=[["Sans préférence","#c9b2a7","★"],["Léa","#b9715a","L"],["Nora","#8e6c5c","N"],["Inès","#c1866b","I"]];
+const sEl=document.getElementById('staffs');
+sEl.innerHTML=staffs.map((s,i)=>`<button type="button" class="staff${i===0?' sel':''}" data-n="${s[0]}"><span class="av" style="background:${s[1]}">${s[2]}</span>${s[0]}</button>`).join('');
+sEl.addEventListener('click',e=>{const b=e.target.closest('.staff');if(!b)return;sEl.querySelectorAll('.staff').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.staff=b.dataset.n;st.slot=null;renderSlots();sum()});
+const daysEl=document.getElementById('days');const days=[];const d0=new Date();
+for(let k=0;days.length<7;k++){const d=new Date(d0);d.setDate(d0.getDate()+k);days.push(d)}
+const dn=['dim','lun','mar','mer','jeu','ven','sam'],mn=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+daysEl.innerHTML=days.map((d,i)=>{const lastSlot=(d.getDay()===6?18:19)*60-30,nowMin=d0.getHours()*60+d0.getMinutes();const closed=d.getDay()===0||d.getDay()===1||(i===0&&nowMin>=lastSlot);return `<button type="button" class="day" data-i="${i}" ${closed?'disabled title="Fermé"':''}><small>${dn[d.getDay()]}</small><b>${d.getDate()}</b><small>${mn[d.getMonth()]}</small></button>`}).join('');
+daysEl.addEventListener('click',e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;daysEl.querySelectorAll('.day').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.day=days[+b.dataset.i];st.slot=null;renderSlots();sum()});
+const slotsEl=document.getElementById('slots'),hint=document.getElementById('slotHint');
+function seeded(n){let x=Math.sin(n)*10000;return x-Math.floor(x)}
+function renderSlots(){if(!st.day){slotsEl.innerHTML='';return}
+ const end=st.day.getDay()===6?18:19;const times=[];for(let h=9;h<end;h++)for(const m of[0,30])times.push(`${h}:${m?'30':'00'}`);
+ const seed=st.day.getDate()*7+st.staff.length;
+ const now=new Date();const today=st.day.toDateString()===now.toDateString();
+ slotsEl.innerHTML=times.map((t,i)=>{const [h,m]=t.split(':').map(Number);const past=today&&(h*60+m)<=now.getHours()*60+now.getMinutes();const taken=past||seeded(seed+i)<.35;return `<button type="button" class="slot${st.slot===t?' sel':''}" ${taken?'disabled':''}>${t}</button>`}).join('');
+ hint.textContent=st.svc?'Les créneaux barrés sont déjà pris.':'Astuce : choisissez aussi une prestation.';}
+slotsEl.addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;slotsEl.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.slot=b.textContent;sum()});
+const $=id=>document.getElementById(id);
+function dateTxt(){return st.day?`${dn[st.day.getDay()]} ${st.day.getDate()} ${mn[st.day.getMonth()]}${st.slot?' · '+st.slot:''}`:'—'}
+function sum(){$('sSvc').textContent=st.svc?st.svc[0]:'—';$('sStaff').textContent=st.staff;$('sDate').textContent=dateTxt();$('sDur').textContent=st.svc?fmtDur(st.svc[2]):'—';$('sPrice').textContent=(st.svc?st.svc[3]:0)+' €'}
+$('confirm').addEventListener('click',()=>{const n=$('b-name').value.trim(),t=$('b-tel').value.trim();
+ if(!st.svc)return $('bErr').textContent='Choisissez une prestation.';if(!st.day||!st.slot)return $('bErr').textContent='Choisissez un jour et un créneau.';if(!n||!t)return $('bErr').textContent='Indiquez votre nom et votre téléphone.';
+ $('bErr').textContent='';$('sumForm').style.display='none';$('ok').classList.add('on');
+ $('okText').textContent=`${n.split(' ')[0]}, on vous attend ${dateTxt()} pour « ${st.svc[0]} »${st.staff!=='Sans préférence'?' avec '+st.staff:''}.`});
+$('again').addEventListener('click',()=>{$('ok').classList.remove('on');$('sumForm').style.display=''});
+sum();
+})();
+</script>
+</body>
+</html>
