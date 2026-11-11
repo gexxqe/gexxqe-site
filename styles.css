@@ -68,3 +68,19 @@ footer{padding:34px 0 45px;border-top:1px solid var(--line)}.footer-grid{display
 .hero-social .social-link{background:var(--paper)}
 .hero-social .social-link:hover{background:var(--deep)}
 @media(max-width:560px){.hero-social{margin-top:24px}.hero-social .social-links{gap:8px}}
+
+/* Legal pages, form privacy note, footer wrap (2026-11-11). */
+.legal-page{background:radial-gradient(circle at top,#eef3ed,var(--cream) 55%);min-height:100vh;padding:48px 20px 72px}
+.legal-wrap{width:min(760px,100%);margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:52px;box-shadow:var(--shadow);color:var(--ink);line-height:1.7}
+.legal-wrap .thanks-brand{justify-content:flex-start;margin-bottom:30px}
+.legal-wrap h1{font-size:clamp(36px,6vw,54px);margin:6px 0 4px}
+.legal-wrap h2{font-size:21px;margin:34px 0 8px}
+.legal-wrap p,.legal-wrap li{color:#3e4a43;font-size:15px}
+.legal-wrap ul{padding-left:20px;margin:8px 0}
+.legal-wrap a:not(.btn):not(.thanks-brand){color:var(--deep);text-decoration:underline;text-underline-offset:3px}
+.legal-updated{font-size:13px!important;color:var(--muted)!important;margin:0}
+.legal-back{margin-top:40px}
+.todo{background:#fff1c7;color:#7a5a12;border-radius:6px;padding:1px 6px;font-weight:600}
+.form-note a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.footer-links{flex-wrap:wrap;row-gap:8px}
+@media(max-width:560px){.legal-wrap{padding:34px 22px;border-radius:22px}}
