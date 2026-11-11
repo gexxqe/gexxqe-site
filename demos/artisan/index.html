@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1d36">
+<title>Lumen Électricité — Électricien à Nantes (site démo)</title>
+<link rel="icon" href="/favicon-gq.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1d36;--navy2:#172a4b;--yellow:#ffc928;--yellow2:#ffb400;--ink:#0f1d36;--muted:#5d6a80;--line:#e3e7ee;--bg:#f5f7fa;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3{font-family:Archivo,Inter,system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0}
+a{color:inherit;text-decoration:none}img,svg{display:block}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.demo-bar{background:#111;color:#e9e9e9;font-size:12px;text-align:center;padding:8px 14px}
+.demo-bar a{color:var(--yellow);font-weight:700;text-decoration:underline}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Archivo;font-weight:900;font-size:21px;letter-spacing:-.03em}
+.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--navy);display:grid;place-items:center}
+.menu{display:flex;gap:26px;font-size:14px;font-weight:600;color:#33405a}
+.menu a:hover{color:var(--navy)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;border-radius:12px;padding:13px 20px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-yellow{background:var(--yellow);color:var(--navy);box-shadow:0 10px 24px rgba(255,180,0,.3)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.phone-pill{font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px}
+.hero{background:radial-gradient(1000px 500px at 85% 10%,#22406f 0,transparent 60%),linear-gradient(160deg,var(--navy),#0a1428);color:#fff;padding:80px 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,201,40,.14);color:var(--yellow);border:1px solid rgba(255,201,40,.35);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.pulse{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.hero h1{font-size:clamp(40px,5.6vw,68px);margin:20px 0 18px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p.lead{font-size:18px;color:#c4cee0;max-width:560px;margin:0 0 30px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:28px;margin:44px 0 0;padding:24px 0 60px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.trust div strong{display:block;font-family:Archivo;font-size:26px;color:#fff}
+.trust div span{font-size:13px;color:#9fb0cb}
+.hero-art{position:relative;align-self:end}
+.van{width:100%;height:auto}
+.badge-float{position:absolute;background:#fff;color:var(--navy);border-radius:14px;padding:12px 14px;box-shadow:0 20px 40px rgba(0,0,0,.25);font-size:13px;font-weight:700;display:flex;gap:10px;align-items:center}
+.badge-float small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.bf1{top:8%;left:-4%}.bf2{bottom:22%;right:-2%}
+.ico{width:36px;height:36px;border-radius:10px;background:#fff6d9;display:grid;place-items:center;color:var(--navy);flex-shrink:0}
+section{padding:96px 0}
+.kicker{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b37e00;margin-bottom:12px}
+.sec-head{max-width:680px;margin-bottom:46px}
+.sec-head h2{font-size:clamp(32px,4vw,46px);font-weight:800}
+.sec-head p{color:var(--muted);font-size:17px;margin:14px 0 0}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;transition:.25s;position:relative;overflow:hidden}
+.svc:hover{border-color:var(--yellow);box-shadow:0 20px 40px rgba(15,29,54,.08);transform:translateY(-3px)}
+.svc .ico{width:50px;height:50px;border-radius:14px;margin-bottom:20px;background:var(--navy);color:var(--yellow)}
+.svc h3{font-size:21px;margin-bottom:8px}
+.svc p{color:var(--muted);margin:0;font-size:15px}
+.svc .from{margin-top:18px;font-size:13px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:14px}
+.svc .from b{color:#b37e00}
+.urgent{background:var(--yellow);padding:34px 0}
+.urgent .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.urgent h3{font-size:28px;font-weight:900}
+.urgent p{margin:4px 0 0;font-weight:500}
+.bg-soft{background:var(--bg)}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.work-img{aspect-ratio:4/3;position:relative;overflow:hidden}
+.work-img svg{width:100%;height:100%}
+.work-body{padding:20px 22px}
+.work-body h3{font-size:18px}
+.work-body p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.chip{font-size:12px;font-weight:600;background:var(--bg);border-radius:999px;padding:4px 10px;color:#33405a}
+.zone{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.zone-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.zone-list span{display:flex;gap:8px;align-items:center;font-weight:600;font-size:15px}
+.zone-list span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow2)}
+.map{border-radius:24px;background:var(--navy);aspect-ratio:1/1;position:relative;overflow:hidden}
+.map svg{width:100%;height:100%}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{padding:26px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:Archivo;font-weight:900;font-size:34px;color:var(--yellow2);display:block;margin-bottom:10px}
+.step h3{font-size:18px;margin-bottom:6px}.step p{margin:0;color:var(--muted);font-size:14px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+.stars{color:var(--yellow2);letter-spacing:2px;font-size:15px}
+.review p{margin:12px 0 16px;font-size:15px}
+.review footer{font-size:13px;color:var(--muted)}
+.review footer b{color:var(--ink);display:block;font-size:14px}
+.example{font-size:12px;color:var(--muted);margin-top:14px;text-align:center}
+.quote{background:linear-gradient(160deg,var(--navy),#0a1428);color:#fff}
+.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+.quote h2{font-size:clamp(32px,4vw,46px);font-weight:900}
+.quote .side p{color:#c4cee0}
+.contact-line{display:flex;gap:12px;align-items:center;margin-top:18px;font-weight:700}
+.contact-line .ico{background:rgba(255,201,40,.15);color:var(--yellow)}
+.form{background:#fff;color:var(--ink);border-radius:22px;padding:30px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.progress{display:flex;gap:6px;margin-bottom:22px}
+.progress i{flex:1;height:5px;border-radius:5px;background:var(--line)}
+.progress i.on{background:var(--yellow2)}
+.fstep{display:none}.fstep.on{display:block}
+.fstep h3{font-size:20px;margin-bottom:16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{border:1.5px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;font-weight:600;font-size:14px;display:flex;align-items:center;gap:10px;background:#fff;font-family:inherit;text-align:left;color:var(--ink)}
+.opt:hover{border-color:#c9d1de}
+.opt.sel{border-color:var(--yellow2);background:#fff9e6}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+input,textarea,select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px;font:inherit;background:#fbfcfd}
+input:focus,textarea:focus{outline:none;border-color:var(--yellow2)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fnav{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+.btn-light{background:var(--bg);color:var(--ink)}
+.done{text-align:center;padding:20px 0}
+.done .ico{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;background:#e7f9ef;color:#1a9b57}
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+footer.site{background:#0a1428;color:#9fb0cb;padding:44px 0;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.foot .logo{color:#fff}
+.sticky-call{display:none}
+@media(max-width:960px){.menu{display:none}.hero-grid,.zone,.quote-grid{grid-template-columns:1fr}.hero-art{max-width:520px}.services,.works,.reviews{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nav-actions .btn{display:none}.services,.works,.reviews,.steps,.opts,.row2{grid-template-columns:1fr}section{padding:70px 0}.hero{padding-top:50px}.bf1{left:0}.bf2{right:0}.trust{gap:18px}.sticky-call{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center}body{padding-bottom:70px}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — entreprise fictive, coordonnées non réelles.</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="#ffc928"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span>Lumen<span style="color:#b37e00">.</span></a>
+    <nav class="menu"><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#zone">Zone</a><a href="#avis">Avis</a><a href="#devis">Devis</a></nav>
+    <div class="nav-actions"><a class="phone-pill" href="#devis"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>01 99 00 12 34</a><a class="btn btn-yellow" href="#devis">Devis gratuit</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag"><span class="pulse"></span>Disponible aujourd’hui · Nantes & agglomération</span>
+      <h1>Votre électricien,<br><em>rapide</em> et <em>soigné</em>.</h1>
+      <p class="lead">Installation, mise aux normes, dépannage et bornes de recharge. Un devis clair sous 24 h, un chantier propre, une installation garantie.</p>
+      <div class="hero-ctas"><a class="btn btn-yellow" href="#devis">Demander un devis gratuit</a><a class="btn btn-ghost" href="#services">Voir nos services</a></div>
+      <div class="trust">
+        <div><strong>15 ans</strong><span>d’expérience</span></div>
+        <div><strong>24 h</strong><span>pour votre devis</span></div>
+        <div><strong>2 h</strong><span>délai d’intervention urgence</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg class="van" viewBox="0 0 520 420" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8edf5"/></linearGradient></defs>
+        <circle cx="300" cy="190" r="170" fill="#ffc928" opacity=".12"/>
+        <rect x="60" y="150" width="380" height="170" rx="26" fill="url(#g1)"/>
+        <path d="M440 200h40c18 0 30 12 34 26l6 34v40c0 11-9 20-20 20h-60z" fill="#e8edf5"/>
+        <path d="M450 212h26c8 0 14 5 16 12l5 22h-47z" fill="#9fb3d4"/>
+        <rect x="60" y="282" width="460" height="18" fill="#ffc928"/>
+        <rect x="90" y="180" width="200" height="34" rx="8" fill="#0f1d36"/>
+        <text x="106" y="203" font-family="Archivo,Arial" font-weight="900" font-size="20" fill="#ffc928">LUMEN</text>
+        <text x="190" y="203" font-family="Inter,Arial" font-weight="600" font-size="13" fill="#fff">ÉLECTRICITÉ</text>
+        <text x="92" y="246" font-family="Inter,Arial" font-weight="700" font-size="15" fill="#0f1d36">Dépannage 7j/7</text>
+        <circle cx="150" cy="330" r="38" fill="#0f1d36"/><circle cx="150" cy="330" r="16" fill="#9fb3d4"/>
+        <circle cx="430" cy="330" r="38" fill="#0f1d36"/><circle cx="430" cy="330" r="16" fill="#9fb3d4"/>
+        <rect x="0" y="366" width="520" height="54" fill="#0a1428" opacity=".6"/>
+        <path d="M340 80l-28 44h22l-6 40 30-48h-22z" fill="#ffc928"/>
+      </svg>
+      <div class="badge-float bf1"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Garantie décennale<small>Travaux assurés</small></span></div>
+      <div class="badge-float bf2"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Ponctuel<small>Créneau confirmé par SMS</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Nos services</div><h2>Tout l’électrique de votre maison, par un seul artisan.</h2><p>Particuliers et petits commerces : on intervient du simple dépannage à la rénovation complète.</p></div>
+    <div class="services">
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span><h3>Dépannage urgent</h3><p>Panne générale, disjoncteur qui saute, odeur de brûlé : on intervient vite et on sécurise.</p><div class="from"><span>Déplacement</span><b>dès 49 €</b></div></article>
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg></span><h3>Mise aux normes</h3><p>Diagnostic, tableau électrique, différentiels et prises de terre selon la norme NF C 15-100.</p><div class="from"><span>Tableau complet</span><b>dès 890 €</b></div></article>
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></span><h3>Rénovation complète</h3><p>Réseau électrique neuf pour maison ou appartement, avec plan et chiffrage détaillé.</p><div class="from"><span>Sur devis</span><b>gratuit</b></div></article>
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="10" height="18" rx="2"/><path d="M15 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V9l-2-2"/><path d="M10 8l-2 4h4l-2 4"/></svg></span><h3>Borne de recharge</h3><p>Installation de borne pour véhicule électrique à domicile, conseils de puissance inclus.</p><div class="from"><span>Pose</span><b>dès 1 190 €</b></div></article>
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span><h3>Éclairage</h3><p>Spots LED, éclairage extérieur, variateurs : une lumière adaptée à chaque pièce.</p><div class="from"><span>Point lumineux</span><b>dès 85 €</b></div></article>
+      <article class="svc"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/><path d="M9 8a4 4 0 0 1 6 0M10.5 10.5a1.8 1.8 0 0 1 3 0"/></svg></span><h3>Domotique</h3><p>Volets, chauffage et lumières pilotés depuis votre téléphone, simplement.</p><div class="from"><span>Étude</span><b>offerte</b></div></article>
+    </div>
+  </div>
+</section>
+
+<div class="urgent"><div class="wrap"><div><h3>Une panne ? On arrive.</h3><p>Intervention d’urgence 7j/7 sur Nantes et ses environs.</p></div><a class="btn btn-navy" href="#devis">☎ 01 99 00 12 34</a></div></div>
+
+<section id="realisations" class="bg-soft">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Réalisations</div><h2>Quelques chantiers récents.</h2><p>Chaque chantier est laissé propre, testé et expliqué au client.</p></div>
+    <div class="works">
+      <article class="work"><div class="work-img"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#dfe5ee"/><rect x="110" y="40" width="180" height="220" rx="10" fill="#fff" stroke="#c4cddb" stroke-width="3"/><g fill="#0f1d36"><rect x="130" y="70" width="140" height="34" rx="4"/><rect x="130" y="120" width="140" height="34" rx="4"/><rect x="130" y="170" width="140" height="34" rx="4"/></g><g fill="#ffc928"><rect x="136" y="78" width="12" height="18" rx="2"/><rect x="154" y="78" width="12" height="18" rx="2"/><rect x="172" y="78" width="12" height="18" rx="2"/><rect x="136" y="128" width="12" height="18" rx="2"/><rect x="154" y="128" width="12" height="18" rx="2"/><rect x="136" y="178" width="12" height="18" rx="2"/></g><g fill="#fff"><rect x="196" y="78" width="12" height="18" rx="2"/><rect x="214" y="78" width="12" height="18" rx="2"/><rect x="172" y="128" width="12" height="18" rx="2"/><rect x="190" y="128" width="12" height="18" rx="2"/><rect x="154" y="178" width="12" height="18" rx="2"/><rect x="172" y="178" width="12" height="18" rx="2"/></g></svg></div><div class="work-body"><h3>Tableau électrique neuf</h3><p>Maison de 1975 à Rezé : remplacement du tableau et mise en sécurité.</p><div class="chips"><span class="chip">Mise aux normes</span><span class="chip">2 jours</span></div></div></article>
+      <article class="work"><div class="work-img"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#1a2a47"/><rect y="220" width="400" height="80" fill="#2a3b5c"/><rect x="60" y="120" width="70" height="140" rx="10" fill="#e8edf5"/><rect x="72" y="140" width="46" height="30" rx="4" fill="#3ddc84"/><path d="M95 260c0 20 30 20 60 10s70-10 90 10" stroke="#0f1d36" stroke-width="8" fill="none"/><rect x="190" y="170" width="170" height="70" rx="22" fill="#ffc928"/><circle cx="225" cy="245" r="20" fill="#0f1d36"/><circle cx="325" cy="245" r="20" fill="#0f1d36"/><path d="M215 170l20-28h80l25 28" fill="#ffd95e"/></svg></div><div class="work-body"><h3>Borne de recharge 7 kW</h3><p>Garage individuel à Orvault, avec protection dédiée au tableau.</p><div class="chips"><span class="chip">Borne</span><span class="chip">1 jour</span></div></div></article>
+      <article class="work"><div class="work-img"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><rect width="400" height="300" fill="#f4efe6"/><rect y="230" width="400" height="70" fill="#d9cdb8"/><rect x="40" y="150" width="140" height="80" rx="8" fill="#b8a283"/><rect x="230" y="120" width="130" height="110" rx="6" fill="#fff" stroke="#e1d6c3" stroke-width="3"/><g fill="#ffc928"><circle cx="90" cy="40" r="7"/><circle cx="170" cy="40" r="7"/><circle cx="250" cy="40" r="7"/><circle cx="330" cy="40" r="7"/></g><g fill="#ffc928" opacity=".18"><path d="M90 40l-40 190h80z"/><path d="M170 40l-40 190h80z"/><path d="M250 40l-40 190h80z"/><path d="M330 40l-40 190h80z"/></g><rect x="0" y="30" width="400" height="6" fill="#e1d6c3"/></svg></div><div class="work-body"><h3>Éclairage LED salon</h3><p>Appartement à Nantes centre : spots encastrés et variateurs.</p><div class="chips"><span class="chip">Éclairage</span><span class="chip">1 jour</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="zone">
+  <div class="wrap zone">
+    <div>
+      <div class="kicker">Zone d’intervention</div>
+      <h2 style="font-size:clamp(32px,4vw,46px);font-weight:800">Nantes et 25 km autour.</h2>
+      <p style="color:var(--muted);font-size:17px">Pas de frais de déplacement supplémentaires dans les communes ci-dessous.</p>
+      <div class="zone-list"><span>Nantes</span><span>Rezé</span><span>Saint-Herblain</span><span>Orvault</span><span>Carquefou</span><span>Vertou</span><span>Bouguenais</span><span>La Chapelle-sur-Erdre</span></div>
+    </div>
+    <div class="map" aria-hidden="true">
+      <svg viewBox="0 0 400 400"><defs><radialGradient id="rz"><stop offset="0" stop-color="#ffc928" stop-opacity=".45"/><stop offset="1" stop-color="#ffc928" stop-opacity="0"/></radialGradient></defs>
+        <g stroke="#22406f" stroke-width="1">
+          <path d="M0 60h400M0 120h400M0 180h400M0 240h400M0 300h400M0 360h400M60 0v400M120 0v400M180 0v400M240 0v400M300 0v400M360 0v400"/></g>
+        <path d="M-10 230c60-20 110 10 170-10s120-50 250-20" stroke="#3a6bb5" stroke-width="14" fill="none" opacity=".7"/>
+        <circle cx="200" cy="200" r="150" fill="url(#rz)"/><circle cx="200" cy="200" r="150" fill="none" stroke="#ffc928" stroke-dasharray="6 8" stroke-width="2"/>
+        <g fill="#fff" font-family="Inter,Arial" font-size="12" font-weight="600">
+          <circle cx="200" cy="200" r="9" fill="#ffc928"/><text x="214" y="196">Nantes</text>
+          <circle cx="185" cy="262" r="4"/><text x="194" y="266">Rezé</text>
+          <circle cx="120" cy="180" r="4"/><text x="60" y="170">St-Herblain</text>
+          <circle cx="170" cy="120" r="4"/><text x="180" y="116">Orvault</text>
+          <circle cx="290" cy="140" r="4"/><text x="298" y="136">Carquefou</text>
+          <circle cx="260" cy="290" r="4"/><text x="268" y="294">Vertou</text>
+          <circle cx="110" cy="285" r="4"/><text x="60" y="305">Bouguenais</text>
+        </g></svg>
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Comment ça se passe</div><h2>Simple, du premier appel à la facture.</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Vous nous contactez</h3><p>Par téléphone ou via le formulaire, en 2 minutes.</p></div>
+      <div class="step"><h3>Visite & diagnostic</h3><p>On passe voir l’installation et on vous explique tout.</p></div>
+      <div class="step"><h3>Devis détaillé</h3><p>Prix ferme, sous 24 h, sans surprise.</p></div>
+      <div class="step"><h3>Travaux & garantie</h3><p>Chantier propre, testé, attestation remise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Avis clients</div><h2>Ils nous ont fait confiance.</h2></div>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>« Intervention le jour même pour une panne générale. Travail propre et explications claires. »</p><footer><b>Sophie M.</b>Dépannage · Nantes</footer></div>
+      <div class="review"><div class="stars">★★★★★</div><p>« Devis reçu le lendemain, tableau changé en deux jours. Je recommande sans hésiter. »</p><footer><b>Karim B.</b>Mise aux normes · Rezé</footer></div>
+      <div class="review"><div class="stars">★★★★★</div><p>« Très bons conseils pour la borne de recharge, installation nickel. »</p><footer><b>Julie et Marc</b>Borne · Orvault</footer></div>
+    </div>
+    <p class="example">Avis d’exemple — contenu de démonstration.</p>
+  </div>
+</section>
+
+<section id="devis" class="quote">
+  <div class="wrap quote-grid">
+    <div class="side">
+      <div class="kicker" style="color:var(--yellow)">Devis gratuit</div>
+      <h2>Décrivez votre besoin, on vous rappelle sous 24 h.</h2>
+      <p>Trois questions rapides pour préparer un devis précis.</p>
+      <div class="contact-line"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>01 99 00 12 34</div>
+      <div class="contact-line"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Lun–Sam 8h–19h · Urgences 7j/7</div>
+    </div>
+    <form class="form" id="quoteForm" novalidate>
+      <div class="progress"><i class="on"></i><i></i><i></i></div>
+      <div class="fstep on" data-step="0">
+        <h3>1. Quel type de travaux ?</h3>
+        <div class="opts" data-name="type">
+          <button type="button" class="opt">⚡ Dépannage</button><button type="button" class="opt">📋 Mise aux normes</button>
+          <button type="button" class="opt">🏠 Rénovation</button><button type="button" class="opt">🔌 Borne de recharge</button>
+          <button type="button" class="opt">💡 Éclairage</button><button type="button" class="opt">📱 Domotique</button>
+        </div>
+      </div>
+      <div class="fstep" data-step="1">
+        <h3>2. Quand souhaitez-vous intervenir ?</h3>
+        <div class="opts" data-name="when">
+          <button type="button" class="opt">🚨 Urgent (aujourd’hui)</button><button type="button" class="opt">Cette semaine</button>
+          <button type="button" class="opt">Ce mois-ci</button><button type="button" class="opt">Je me renseigne</button>
+        </div>
+        <label for="q-msg">Précisions (facultatif)</label><textarea id="q-msg" rows="3" placeholder="Ex. le disjoncteur saute quand j’allume le four"></textarea>
+      </div>
+      <div class="fstep" data-step="2">
+        <h3>3. Vos coordonnées</h3>
+        <div class="row2"><div><label for="q-name">Nom</label><input id="q-name" required></div><div><label for="q-tel">Téléphone</label><input id="q-tel" type="tel" required></div></div>
+        <label for="q-city">Commune</label><input id="q-city" placeholder="Ex. Rezé" required>
+      </div>
+      <div class="fstep" data-step="3">
+        <div class="done"><span class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h3>Demande enregistrée !</h3><p id="summary" style="color:var(--muted)"></p><p class="note">Démo : aucune donnée n’a été envoyée.</p></div>
+      </div>
+      <div class="fnav"><button type="button" class="btn btn-light" id="prev" style="visibility:hidden">Retour</button><button type="button" class="btn btn-yellow" id="next">Continuer</button></div>
+      <p class="note" id="err" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap foot"><span class="logo"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="#ffc928"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></span>Lumen</span><span>Électricité générale · Nantes · Site démo réalisé par <a href="/" style="color:#ffc928">gexxqe</a></span></div></footer>
+<a class="btn btn-yellow sticky-call" href="#devis">☎ Appeler · Devis gratuit</a>
+
+<script>
+(function(){
+  const steps=[...document.querySelectorAll('.fstep')],bars=[...document.querySelectorAll('.progress i')];
+  const prev=document.getElementById('prev'),next=document.getElementById('next'),err=document.getElementById('err');
+  const data={};let i=0;
+  document.querySelectorAll('.opts').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;g.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));b.classList.add('sel');data[g.dataset.name]=b.textContent.replace(/^[^A-Za-zÀ-ÿ]+/,'').trim();err.textContent='';}));
+  function show(){steps.forEach((s,k)=>s.classList.toggle('on',k===i));bars.forEach((b,k)=>b.classList.toggle('on',k<=Math.min(i,2)));prev.style.visibility=(i>0&&i<3)?'visible':'hidden';next.textContent=i===2?'Envoyer la demande':'Continuer';next.style.display=i===3?'none':'';}
+  next.addEventListener('click',()=>{
+    if(i===0&&!data.type){err.textContent='Choisissez un type de travaux.';return}
+    if(i===1&&!data.when){err.textContent='Indiquez quand intervenir.';return}
+    if(i===2){const n=document.getElementById('q-name').value.trim(),t=document.getElementById('q-tel').value.trim(),c=document.getElementById('q-city').value.trim();if(!n||!t||!c){err.textContent='Merci de remplir les trois champs.';return}
+      document.getElementById('summary').textContent=`${n}, nous vous rappelons au ${t} pour votre demande « ${data.type} » (${data.when.toLowerCase()}) à ${c}.`;}
+    err.textContent='';i++;show();});
+  prev.addEventListener('click',()=>{i=Math.max(0,i-1);err.textContent='';show();});
+})();
+</script>
+</body>
+</html>

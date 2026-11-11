@@ -181,3 +181,19 @@ footer{padding:34px 0 45px;border-top:1px solid var(--line)}.footer-grid{display
   .about-card{padding:22px}
 }
 @media(prefers-reduced-motion:reduce){.work-scroll img{transition:none}.device-stage,.service-card{transition:none}}
+
+/* Demo grid in Réalisations (2026-11-11) */
+.demo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.demo-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.demo-card:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(21,53,40,.1)}
+.demo-shot{background:#efe8da;overflow:hidden}
+.demo-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .6s ease}
+.demo-card:hover .demo-shot img{transform:scale(1.04)}
+.demo-info{padding:22px 22px 20px;display:flex;flex-direction:column}
+.demo-type{align-self:flex-start;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7a5a12;background:#f6ead0;border-radius:999px;padding:5px 10px}
+.demo-info h3{font-size:22px;margin:12px 0 6px;color:var(--deep)}
+.demo-info p{font-size:13.5px;line-height:1.6;color:var(--muted);margin:0;flex:1}
+.demo-link{margin-top:14px;font-size:13px;font-weight:800;color:var(--deep)}
+.demo-card:hover .demo-link span{display:inline-block;transform:translateX(3px)}
+@media(max-width:1000px){.demo-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.demo-card{grid-template-columns:1fr}.demo-shot{aspect-ratio:16/10}}
