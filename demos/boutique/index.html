@@ -220,6 +220,8 @@ document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',(
 document.getElementById('q').addEventListener('input',e=>{q=e.target.value.toLowerCase();render()});
 document.getElementById('sort').addEventListener('change',e=>{sort=e.target.value;render()});
 function render(){let l=P.filter(x=>x.c!=='box'&&(cat==='all'||x.c===cat)&&(x.n+x.o+x.d).toLowerCase().includes(q));
+ // Ordre « Populaires » : produits photographiés d’abord (ordre d’origine conservé dans chaque groupe).
+ if(sort==='pop')l=l.filter(x=>x.img).concat(l.filter(x=>!x.img));
  if(sort==='asc')l.sort((a,b)=>a.p-b.p);if(sort==='desc')l.sort((a,b)=>b.p-a.p);
  grid.innerHTML=l.length?l.map(x=>`<article class="prod"><div class="prod-img${x.img?' has-photo':''}" style="background:${x.bg}">${x.b?`<span class="badge${x.b==='Nouveau'?' new':''}">${x.b}</span>`:''}${media(x,'(max-width:760px) 50vw, 280px')}</div><div class="prod-body"><span class="origin">${x.o}</span><h3>${x.n}</h3><p>${x.d}</p><div class="prod-foot"><span class="pp">${euro(x.p)}${x.old?`<s>${euro(x.old)}</s>`:''}</span><button class="add" data-id="${x.id}" aria-label="Ajouter ${x.n} au panier">+</button></div></div></article>`).join(''):'<p class="empty">Aucun produit ne correspond à votre recherche.</p>';}
 grid.addEventListener('click',e=>{const b=e.target.closest('.add');if(!b)return;add(+b.dataset.id);b.classList.add('ok');b.textContent='✓';setTimeout(()=>{b.classList.remove('ok');b.textContent='+'},900)});
