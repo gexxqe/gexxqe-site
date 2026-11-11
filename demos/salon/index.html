@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blush:#f6ece6;--rose:#e9cfc4;--terra:#a8553c;--terra2:#8d4430;--ink:#2b1f1b;--muted:#7b6a63;--line:#ead9d0;--cream:#fffaf6}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.08;margin:0;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
@@ -131,7 +131,7 @@ input:focus{outline:none;border-color:var(--terra)}
     </div>
     <div class="arch-wrap">
       <div class="arch"><img src="img/hero-coiffeuse-600.webp" srcset="img/hero-coiffeuse-600.webp 600w, img/hero-coiffeuse-1000.webp 1000w" sizes="(max-width:960px) 90vw, 460px" width="600" height="750" alt="Coiffeuse souriante réalisant un brushing au sèche-cheveux" fetchpriority="high" decoding="async"></div>
-      <div class="float-card fc1"><b>Prochain créneau libre</b><span class="small">Demain avec Léa</span><div class="slots-mini"><span>14:30</span><span class="on">15:00</span><span>16:30</span></div></div>
+      <div class="float-card fc1" id="nextCard"><b>Prochain créneau libre</b><span class="small" id="nextWhen">avec Léa</span><div class="slots-mini" id="nextSlots"></div></div>
       <div class="float-card fc2"><span class="big">−10 %</span><br><span class="small">1ʳᵉ visite</span></div>
     </div>
   </div>
@@ -240,12 +240,20 @@ daysEl.innerHTML=days.map((d,i)=>{const lastSlot=(d.getDay()===6?18:19)*60-30,no
 daysEl.addEventListener('click',e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;daysEl.querySelectorAll('.day').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.day=days[+b.dataset.i];st.slot=null;renderSlots();sum()});
 const slotsEl=document.getElementById('slots'),hint=document.getElementById('slotHint');
 function seeded(n){let x=Math.sin(n)*10000;return x-Math.floor(x)}
+// Source unique des disponibilités : utilisée par le formulaire ET par la carte « Prochain créneau libre ».
+function slotsFor(day,staff){const end=day.getDay()===6?18:19;const times=[];for(let h=9;h<end;h++)for(const m of[0,30])times.push(`${h}:${m?'30':'00'}`);
+ const seed=day.getDate()*7+staff.length;const now=new Date();const today=day.toDateString()===now.toDateString();
+ return times.map((t,i)=>{const [h,m]=t.split(':').map(Number);const past=today&&(h*60+m)<=now.getHours()*60+now.getMinutes();return {t,taken:past||seeded(seed+i)<.35}})}
 function renderSlots(){if(!st.day){slotsEl.innerHTML='';return}
- const end=st.day.getDay()===6?18:19;const times=[];for(let h=9;h<end;h++)for(const m of[0,30])times.push(`${h}:${m?'30':'00'}`);
- const seed=st.day.getDate()*7+st.staff.length;
- const now=new Date();const today=st.day.toDateString()===now.toDateString();
- slotsEl.innerHTML=times.map((t,i)=>{const [h,m]=t.split(':').map(Number);const past=today&&(h*60+m)<=now.getHours()*60+now.getMinutes();const taken=past||seeded(seed+i)<.35;return `<button type="button" class="slot${st.slot===t?' sel':''}" ${taken?'disabled':''}>${t}</button>`}).join('');
+ slotsEl.innerHTML=slotsFor(st.day,st.staff).map(x=>`<button type="button" class="slot${st.slot===x.t?' sel':''}" ${x.taken?'disabled':''}>${x.t}</button>`).join('');
  hint.textContent=st.svc?'Les créneaux barrés sont déjà pris.':'Astuce : choisissez aussi une prestation.';}
+(function nextFree(){const staff='Léa';
+ for(let i=0;i<days.length;i++){const b=daysEl.querySelector(`.day[data-i="${i}"]`);if(!b||b.disabled)continue;
+  const free=slotsFor(days[i],staff).filter(x=>!x.taken).slice(0,3);if(!free.length)continue;
+  const when=i===0?'Aujourd’hui':i===1?'Demain':`${dn[days[i].getDay()]} ${days[i].getDate()} ${mn[days[i].getMonth()]}`;
+  document.getElementById('nextWhen').textContent=`${when} avec ${staff}`;
+  document.getElementById('nextSlots').innerHTML=free.map((x,k)=>`<span${k===0?' class="on"':''}>${x.t}</span>`).join('');return}
+ document.getElementById('nextCard').hidden=true;})();
 slotsEl.addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;slotsEl.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');st.slot=b.textContent;sum()});
 const $=id=>document.getElementById(id);
 function dateTxt(){return st.day?`${dn[st.day.getDay()]} ${st.day.getDate()} ${mn[st.day.getMonth()]}${st.slot?' · '+st.slot:''}`:'—'}
