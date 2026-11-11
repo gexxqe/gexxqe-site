@@ -157,7 +157,7 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
 
 <section id="rdv" class="book-sec">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Réservation en ligne</span><h2>Votre rendez-vous en 3 étapes.</h2><p>Confirmation immédiate, rappel la veille par SMS.</p></div>
+    <div class="sec-head"><span class="eyebrow">Réservation en ligne</span><h2>Votre rendez-vous en 3 étapes.</h2><p>Choisissez votre prestation, votre coiffeuse et votre créneau.</p></div>
     <div class="booking">
       <div class="panel">
         <div class="block"><h3><span class="num">1</span>Prestation</h3><div class="svc-grid" id="svcGrid"></div></div>
@@ -176,9 +176,9 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
           <label for="b-tel">Téléphone</label><input id="b-tel" type="tel" autocomplete="off">
           <p class="small" id="bErr" role="alert" style="color:var(--terra2)"></p>
           <button class="btn btn-terra full" id="confirm">Confirmer le rendez-vous</button>
-          <p class="small" style="text-align:center;margin-top:10px">Paiement sur place · Annulation gratuite 24 h avant</p>
+          <p class="small" style="text-align:center;margin-top:10px">Paiement sur place · Annulation gratuite 24 h avant</p><p class="small" style="text-align:center;margin-top:4px">Démo : créneaux simulés, aucune réservation réelle.</p>
         </div>
-        <div class="ok" id="ok"><div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3 style="justify-content:center">C’est réservé !</h3><p id="okText" class="hint"></p><p class="small">Démo : aucune réservation n’a été créée.</p><button class="btn btn-line full" id="again" style="margin-top:12px">Nouvelle réservation</button></div>
+        <div class="ok" id="ok"><div class="check"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3 style="justify-content:center">C’est réservé !</h3><p id="okText" class="hint"></p><p class="small">Démo : aucune réservation n’a été créée. Pour un vrai salon, ce module se relie à l’agenda du salon (Planity, Google Agenda…) et peut envoyer des rappels par SMS.</p><button class="btn btn-line full" id="again" style="margin-top:12px">Nouvelle réservation</button></div>
       </aside>
     </div>
   </div>
@@ -186,7 +186,7 @@ footer{background:var(--ink);color:#cdbcb4;padding:40px 0;font-size:14px}
 
 <section id="equipe">
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">L’équipe</span><h2>Trois mains expertes.</h2></div>
+    <div class="sec-head"><span class="eyebrow">L’équipe</span><h2>Trois coiffeuses passionnées.</h2></div>
     <div class="team">
       <div class="member"><div class="portrait" style="background:linear-gradient(170deg,#e7c1b2,#b9715a)">L</div><h3>Léa</h3><p>Fondatrice · Coupes & balayages</p></div>
       <div class="member"><div class="portrait" style="background:linear-gradient(170deg,#d9c3b5,#8e6c5c)">N</div><h3>Nora</h3><p>Coloriste · Couleurs végétales</p></div>
@@ -262,7 +262,7 @@ function sum(){$('sSvc').textContent=st.svc?st.svc[0]:'—';$('sStaff').textCont
 $('confirm').addEventListener('click',()=>{const n=$('b-name').value.trim(),t=$('b-tel').value.trim();
  if(!st.svc)return $('bErr').textContent='Choisissez une prestation.';if(!st.day||!st.slot)return $('bErr').textContent='Choisissez un jour et un créneau.';if(!n||!t)return $('bErr').textContent='Indiquez votre nom et votre téléphone.';
  $('bErr').textContent='';$('sumForm').style.display='none';$('ok').classList.add('on');
- $('okText').textContent=`${n.split(' ')[0]}, on vous attend ${dateTxt()} pour « ${st.svc[0]} »${st.staff!=='Sans préférence'?' avec '+st.staff:''}. Un SMS de rappel sera envoyé au ${t}.`});
+ $('okText').textContent=`${n.split(' ')[0]}, on vous attend ${dateTxt()} pour « ${st.svc[0]} »${st.staff!=='Sans préférence'?' avec '+st.staff:''}.`});
 $('again').addEventListener('click',()=>{$('ok').classList.remove('on');$('sumForm').style.display=''});
 sum();
 })();
