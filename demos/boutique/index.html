@@ -58,7 +58,7 @@ select{border:1.5px solid var(--line);background:var(--card);border-radius:999px
 .prod{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
 .prod:hover{box-shadow:0 18px 40px rgba(47,58,34,.1);transform:translateY(-3px)}
 .prod-img{aspect-ratio:1/1;position:relative;display:grid;place-items:center}
-.prod-img svg{width:62%;height:auto}
+.prod-img svg{width:62%;height:auto}.prod-img.has-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.prod-img .badge{z-index:1}.thumb{overflow:hidden}.thumb.has-photo img{width:100%;height:100%;object-fit:cover}
 .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.04em}
 .badge.new{background:var(--olive)}
 .prod-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
@@ -107,7 +107,7 @@ select{border:1.5px solid var(--line);background:var(--card);border-radius:999px
 .full{width:100%}
 .done{text-align:center;padding:40px 10px}
 .done .c{width:66px;height:66px;border-radius:50%;background:#e6eedb;color:var(--olive);display:grid;place-items:center;margin:0 auto 14px}
-footer{background:var(--olive);color:#cfd6c2;padding:44px 0;font-size:14px;margin-top:30px}
+.demo-info{padding:56px 0;border-top:1px solid var(--line)}.di-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:14px}.demo-info h3{font-size:24px;margin-bottom:8px}.demo-info ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}.demo-info li{margin:4px 0}@media(max-width:700px){.di-grid{grid-template-columns:1fr;gap:16px}}footer{background:var(--olive);color:#cfd6c2;padding:44px 0;font-size:14px;margin-top:30px}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 .foot .logo{color:#fff}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.perks{grid-template-columns:1fr 1fr}.menu{display:none}}
@@ -116,7 +116,7 @@ footer{background:var(--olive);color:#cfd6c2;padding:44px 0;font-size:14px;margi
 </style>
 </head>
 <body>
-<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — boutique fictive, aucun paiement ni commande réels.</div>
+<div class="demo-bar">Site de démonstration réalisé par <a href="/">gexxqe</a> — boutique fictive ; photos illustratives de banque d’images (Pexels) ; aucun paiement ni commande réels.</div>
 <div class="ship">Livraison offerte dès 49 € · Click & collect gratuit en 2 h</div>
 <header><div class="wrap nav">
   <a class="logo" href="#"><span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4h10l1 4H6z"/><rect x="6" y="8" width="12" height="12" rx="2"/></svg></span>Le Garde-Manger</a>
@@ -171,6 +171,7 @@ footer{background:var(--olive);color:#cfd6c2;padding:44px 0;font-size:14px;margi
   </div>
 </section>
 
+<section class="demo-info" aria-label="Ce que montre cette démo"><div class="wrap"><span class="eyebrow" style="color:#9a7414">À propos de cette démo</span><div class="di-grid"><div><h3>Fonctionnel</h3><ul><li>Catalogue avec filtres par catégorie, recherche et tri</li><li>Panier : quantités, code promo, retrait ou livraison, totaux</li><li>Panier conservé dans ce navigateur</li></ul></div><div><h3>Simulé</h3><ul><li>Paiement et commande : aucun débit, aucune commande envoyée. Pour une vraie boutique : Stripe ou PayPal, et suivi des commandes dans un espace de gestion.</li><li>Stocks, délais et retrait en 2 h : textes d’exemple.</li><li>Boutique fictive. Photos illustratives : elles ne garantissent ni origine, ni appellation, ni composition. Les autres produits restent illustrés.</li></ul></div></div></div></section>
 <footer><div class="wrap foot"><span class="logo"><span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4h10l1 4H6z"/><rect x="6" y="8" width="12" height="12" rx="2"/></svg></span>Le Garde-Manger</span><span>Épicerie fictive · 8 rue des Halles, Lyon · Site démo réalisé par <a href="/" style="color:#d9a62e">gexxqe</a></span></div></footer>
 
 <div class="overlay" id="overlay"></div>
@@ -192,19 +193,20 @@ footer{background:var(--olive);color:#cfd6c2;padding:44px 0;font-size:14px;margi
 <script>
 (function(){
 const P=[
- {id:1,n:"Huile d’olive vierge extra",o:"Provence",c:"huiles",p:16.9,d:"Fruité vert, première pression à froid. 50 cl.",col:"#7d8f3a",bg:"#eef1e2",s:"bottle",b:"Best"},
- {id:2,n:"Miel de lavande",o:"Drôme",c:"sucre",p:9.5,d:"Crémeux et floral, récolte de l’été. 250 g.",col:"#e0b33e",bg:"#f8efd6",s:"jar"},
+ {id:1,img:"huile-olive",alt:"Carafe d’huile en verre bouchée de liège",n:"Huile d’olive vierge extra",o:"Provence",c:"huiles",p:16.9,d:"Fruité vert, première pression à froid. 50 cl.",col:"#7d8f3a",bg:"#eef1e2",s:"bottle",b:"Best"},
+ {id:2,img:"miel",alt:"Pot de miel en verre avec cuillère en bois",n:"Miel de lavande",o:"Drôme",c:"sucre",p:9.5,d:"Crémeux et floral, récolte de l’été. 250 g.",col:"#e0b33e",bg:"#f8efd6",s:"jar"},
  {id:3,n:"Sauce tomate au basilic",o:"Ardèche",c:"conserves",p:5.8,d:"Tomates mûries au soleil, cuisson lente.",col:"#c9622f",bg:"#f7e4da",s:"jar"},
  {id:4,n:"Vinaigre de Banyuls",o:"Roussillon",c:"huiles",p:12.4,old:14.9,d:"Vieilli en fût, notes de fruits secs. 25 cl.",col:"#5b2a3a",bg:"#efe0e4",s:"bottle",b:"−15 %"},
  {id:5,n:"Piment d’Espelette AOP",o:"Pays basque",c:"epices",p:8.9,d:"Doux et parfumé, en poudre. 40 g.",col:"#b4462f",bg:"#f6e2dc",s:"tin"},
  {id:6,n:"Rillettes de sardine",o:"Bretagne",c:"conserves",p:6.5,d:"Au citron et à la ciboulette. 120 g.",col:"#3c6e8f",bg:"#e2edf3",s:"tin",b:"Nouveau"},
- {id:7,n:"Caramel au beurre salé",o:"Bretagne",c:"sucre",p:7.2,d:"À tartiner, au sel de Guérande. 220 g.",col:"#a8692b",bg:"#f4e6d4",s:"jar"},
+ {id:7,img:"caramel",alt:"Caramel onctueux en gros plan",n:"Caramel au beurre salé",o:"Bretagne",c:"sucre",p:7.2,d:"À tartiner, au sel de Guérande. 220 g.",col:"#a8692b",bg:"#f4e6d4",s:"jar"},
  {id:8,n:"Herbes de Provence",o:"Provence",c:"epices",p:4.9,d:"Thym, romarin, sarriette, origan.",col:"#6f8a54",bg:"#e9efe0",s:"tin"},
  {id:9,n:"Tapenade noire",o:"Nice",c:"conserves",p:6.9,d:"Olives noires, câpres et anchois.",col:"#2f2f2f",bg:"#e7e6e2",s:"jar"},
  {id:10,n:"Huile de noix",o:"Périgord",c:"huiles",p:11.5,d:"Torréfiée, idéale en vinaigrette. 25 cl.",col:"#8a6234",bg:"#f1e7d9",s:"bottle"},
- {id:11,n:"Biscuits sablés",o:"Normandie",c:"sucre",p:5.5,d:"Pur beurre, recette traditionnelle.",col:"#d9a62e",bg:"#f7eed8",s:"tin"},
- {id:12,n:"Poivre de Kampot",o:"Cambodge",c:"epices",p:9.9,d:"Poivre noir IGP, à moudre. 50 g.",col:"#3a3a2a",bg:"#e8e6dc",s:"jar",b:"Best"}];
+ {id:11,img:"biscuits",alt:"Assortiment de biscuits au beurre",n:"Biscuits sablés",o:"Normandie",c:"sucre",p:5.5,d:"Pur beurre, recette traditionnelle.",col:"#d9a62e",bg:"#f7eed8",s:"tin"},
+ {id:12,img:"poivre",alt:"Grains de poivre noir en gros plan",n:"Poivre de Kampot",o:"Cambodge",c:"epices",p:9.9,d:"Poivre noir IGP, à moudre. 50 g.",col:"#3a3a2a",bg:"#e8e6dc",s:"jar",b:"Best"}];
 const CATS=[["all","Tout"],["huiles","Huiles & vinaigres"],["conserves","Conserves"],["epices","Épices"],["sucre","Douceurs"]];
+const media=(x,size)=>x.img?`<img src="img/${x.img}-400.webp" srcset="img/${x.img}-400.webp 400w, img/${x.img}-800.webp 800w" sizes="${size}" width="400" height="400" alt="${x.alt}" loading="lazy" decoding="async">`:art(x);
 const euro=v=>v.toFixed(2).replace('.',',')+' €';
 function art(x){if(x.s==="bottle")return `<svg viewBox="0 0 100 140"><path d="M38 140V60c0-10 6-18 8-26V12h8v22c2 8 8 16 8 26v80z" fill="${x.col}"/><rect x="44" y="4" width="12" height="10" rx="2" fill="#2f3a22"/><rect x="40" y="82" width="20" height="34" rx="3" fill="#fffdf8"/></svg>`;
  if(x.s==="tin")return `<svg viewBox="0 0 100 140"><rect x="22" y="40" width="56" height="86" rx="8" fill="${x.col}"/><rect x="18" y="34" width="64" height="12" rx="4" fill="#2f3a22"/><rect x="30" y="66" width="40" height="34" rx="4" fill="#fffdf8"/></svg>`;
@@ -218,8 +220,10 @@ document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',(
 document.getElementById('q').addEventListener('input',e=>{q=e.target.value.toLowerCase();render()});
 document.getElementById('sort').addEventListener('change',e=>{sort=e.target.value;render()});
 function render(){let l=P.filter(x=>x.c!=='box'&&(cat==='all'||x.c===cat)&&(x.n+x.o+x.d).toLowerCase().includes(q));
+ // Ordre « Populaires » : produits photographiés d’abord (ordre d’origine conservé dans chaque groupe).
+ if(sort==='pop')l=l.filter(x=>x.img).concat(l.filter(x=>!x.img));
  if(sort==='asc')l.sort((a,b)=>a.p-b.p);if(sort==='desc')l.sort((a,b)=>b.p-a.p);
- grid.innerHTML=l.length?l.map(x=>`<article class="prod"><div class="prod-img" style="background:${x.bg}">${x.b?`<span class="badge${x.b==='Nouveau'?' new':''}">${x.b}</span>`:''}${art(x)}</div><div class="prod-body"><span class="origin">${x.o}</span><h3>${x.n}</h3><p>${x.d}</p><div class="prod-foot"><span class="pp">${euro(x.p)}${x.old?`<s>${euro(x.old)}</s>`:''}</span><button class="add" data-id="${x.id}" aria-label="Ajouter ${x.n} au panier">+</button></div></div></article>`).join(''):'<p class="empty">Aucun produit ne correspond à votre recherche.</p>';}
+ grid.innerHTML=l.length?l.map(x=>`<article class="prod"><div class="prod-img${x.img?' has-photo':''}" style="background:${x.bg}">${x.b?`<span class="badge${x.b==='Nouveau'?' new':''}">${x.b}</span>`:''}${media(x,'(max-width:760px) 50vw, 280px')}</div><div class="prod-body"><span class="origin">${x.o}</span><h3>${x.n}</h3><p>${x.d}</p><div class="prod-foot"><span class="pp">${euro(x.p)}${x.old?`<s>${euro(x.old)}</s>`:''}</span><button class="add" data-id="${x.id}" aria-label="Ajouter ${x.n} au panier">+</button></div></div></article>`).join(''):'<p class="empty">Aucun produit ne correspond à votre recherche.</p>';}
 grid.addEventListener('click',e=>{const b=e.target.closest('.add');if(!b)return;add(+b.dataset.id);b.classList.add('ok');b.textContent='✓';setTimeout(()=>{b.classList.remove('ok');b.textContent='+'},900)});
 // cart
 P.push({id:99,n:"Coffret « Apéro »",o:"Coffret",c:"box",p:39,col:"#2f3a22",bg:"#efe7d2",s:"tin"});
@@ -230,7 +234,7 @@ function add(id){cart[id]=(cart[id]||0)+1;save();upd();const c=document.getEleme
 document.getElementById('addBox').addEventListener('click',()=>{add(99);open()});
 const $=id=>document.getElementById(id);
 function upd(){const ids=Object.keys(cart).filter(k=>cart[k]>0);if(ids.length)$('foot').style.display='';const n=ids.reduce((s,k)=>s+cart[k],0);$('count').textContent=n;
- $('lines').innerHTML=ids.length?ids.map(k=>{const x=P.find(p=>p.id==k);return `<div class="line"><div class="thumb" style="background:${x.bg}">${art(x)}</div><div><h4>${x.n}</h4><div class="qty"><button data-d="-1" data-id="${k}" aria-label="Retirer">−</button><span>${cart[k]}</span><button data-d="1" data-id="${k}" aria-label="Ajouter">+</button></div></div><b>${euro(x.p*cart[k])}</b></div>`}).join(''):'<p class="empty">Votre panier est vide.</p>';
+ $('lines').innerHTML=ids.length?ids.map(k=>{const x=P.find(p=>p.id==k);return `<div class="line"><div class="thumb${x.img?' has-photo':''}" style="background:${x.bg}">${media(x,'58px')}</div><div><h4>${x.n}</h4><div class="qty"><button data-d="-1" data-id="${k}" aria-label="Retirer">−</button><span>${cart[k]}</span><button data-d="1" data-id="${k}" aria-label="Ajouter">+</button></div></div><b>${euro(x.p*cart[k])}</b></div>`}).join(''):'<p class="empty">Votre panier est vide.</p>';
  const sub=ids.reduce((s,k)=>s+P.find(p=>p.id==k).p*cart[k],0);const disc=promo?sub*.1:0;const ship=mode==='liv'&&sub-disc<49&&sub>0?4.9:0;
  $('sub').textContent=euro(sub);$('discRow').style.display=promo?'flex':'none';$('disc').textContent='−'+euro(disc);$('shipCost').textContent=ship?euro(ship):'Gratuit';$('total').textContent=euro(sub-disc+ship);
  $('checkout').disabled=!ids.length;$('checkout').style.opacity=ids.length?1:.5;}
